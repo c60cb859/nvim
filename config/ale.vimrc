@@ -2,5 +2,5 @@
 " Ale config
 " #############################################################################
 
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
