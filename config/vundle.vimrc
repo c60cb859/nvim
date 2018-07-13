@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/xoria256.vim'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
