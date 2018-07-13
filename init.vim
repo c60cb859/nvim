@@ -1,0 +1,42 @@
+" #############################################################################
+" File includes
+" #############################################################################
+
+source $HOME/.config/nvim/config/vundle.vimrc
+source $HOME/.config/nvim/config/nerdtree.vimrc
+
+source $HOME/.config/nvim/config/keys.vimrc
+source $HOME/.config/nvim/config/whitespace.vimrc
+source $HOME/.config/nvim/config/python.vimrc
+
+" #############################################################################
+" Basic vim configuration
+" #############################################################################
+
+syntax on "syntax highlight
+set autoindent
+set number "line numbering
+set cursorline "highlight cursorline
+set noswapfile "turn off swap files
+set backspace=indent,eol,start "allow backspacing over everything in insert mode
+
+" #############################################################################
+" Colorscheme
+" #############################################################################
+
+set bg=dark
+set t_Co=256
+colorscheme xoria256
+
+" #############################################################################
+" Split opening
+" #############################################################################
+
+set splitbelow
+set splitright
+
+" #############################################################################
+" UTF8 Support
+" #############################################################################
+
+set encoding=utf-8
