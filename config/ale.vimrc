@@ -2,4 +2,4 @@
 " Ale config
 " #############################################################################
 
-let g:ale_completion_delay = 1000
+let g:ale_lint_on_text_changed = normal
