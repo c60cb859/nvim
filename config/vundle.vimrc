@@ -12,11 +12,17 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+" dark low contrast colorsheme
 Plugin 'vim-scripts/xoria256.vim'
+" dark high contrast colorsheme
 Plugin 'tomasr/molokai'
+" nerdtree
 Plugin 'scrooloose/nerdtree'
+" programming language linting
 Plugin 'w0rp/ale'
+" light powerline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
