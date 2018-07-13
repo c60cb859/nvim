@@ -23,6 +23,9 @@ Plugin 'w0rp/ale'
 " light powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" git plugin
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
