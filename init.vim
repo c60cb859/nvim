@@ -21,6 +21,8 @@ set number "line numbering
 set cursorline "highlight cursorline
 set noswapfile "turn off swap files
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
+set shiftwidth=4
+set tabstop=3
 
 " #############################################################################
 " Colorscheme
