@@ -22,26 +22,23 @@ set number "line numbering
 set cursorline "highlight cursorline
 set noswapfile "turn off swap files
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
+
+" Default tabs
 set shiftwidth=4
-set tabstop=3
+set tabstop=4
 
-" #############################################################################
 " Colorscheme
-" #############################################################################
-
 set bg=dark
 set t_Co=256
 colorscheme xoria256
 
-" #############################################################################
 " Split opening
-" #############################################################################
-
 set splitbelow
 set splitright
 
-" #############################################################################
 " UTF8 Support
-" #############################################################################
-
 set encoding=utf-8
+
+" Search
+set ignorecase
+set smartcase
