@@ -4,6 +4,7 @@
 
 source $HOME/.config/nvim/config/vundle.vimrc
 source $HOME/.config/nvim/config/nerdtree.vimrc
+source $HOME/.config/nvim/config/ale.vimrc
 source $HOME/.config/nvim/config/airline.vimrc
 source $HOME/.config/nvim/config/gitgutter.vimrc
 
