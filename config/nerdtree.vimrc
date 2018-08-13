@@ -3,4 +3,4 @@
 " #############################################################################
 
 let g:NERDTreeWinPos = "right"
-let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore file in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pychche__'] " ignore file in NERDTree
