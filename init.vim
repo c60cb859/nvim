@@ -10,6 +10,7 @@ source $HOME/.config/nvim/config/gitgutter.vimrc
 
 source $HOME/.config/nvim/config/keys.vimrc
 source $HOME/.config/nvim/config/whitespace.vimrc
+source $HOME/.config/nvim/config/ansible.vimrc
 source $HOME/.config/nvim/config/python.vimrc
 
 " #############################################################################

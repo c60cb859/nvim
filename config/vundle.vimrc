@@ -26,6 +26,8 @@ Plugin 'vim-airline/vim-airline-themes'
 " git plugin
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+" Ansible plugin
+Plugin 'pearofducks/ansible-vim'
 
 call vundle#end()
 
