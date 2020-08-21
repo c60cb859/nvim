@@ -1,7 +1,6 @@
 " #############################################################################
-" Airline configuration
+" Jedi-vim configuration
 " #############################################################################
 
-let g:airline_theme='onedark'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 0
+let g:jedi#completion_enabled = 0
+let g:jedi#user_splits_not_buffers = "right"

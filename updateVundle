@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nvim +PluginClean +PluginInstall +PluginUpdate +UpdateRemotePlugins +qall

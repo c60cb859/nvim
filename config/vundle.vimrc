@@ -12,10 +12,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Colors
 " dark low contrast colorsheme
 Plugin 'vim-scripts/xoria256.vim'
 " dark high contrast colorsheme
 Plugin 'tomasr/molokai'
+Plugin 'joshdick/onedark.vim'
+
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 " programming language linting
@@ -28,6 +32,25 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 " Ansible plugin
 Plugin 'pearofducks/ansible-vim'
+" Auto pari quotes and brackets
+Plugin 'jiangmiao/auto-pairs'
+" Auto completion
+Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plugin 'zchee/deoplete-clang' " { 'for': ['c', 'cpp'] }
+Plugin 'zchee/deoplete-jedi' " { 'for': ['python'] }
+" Python code reference
+Plugin 'davidhalter/jedi-vim' " { 'for': ['python'] }
+" C++ Syntax Highlight
+Plugin 'octol/vim-cpp-enhanced-highlight'
+" Tags
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'majutsushi/tagbar'
+Plugin 'multilobyte/gtags-cscope'
+
+" Navigation
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+
 
 call vundle#end()
 
