@@ -16,7 +16,8 @@ source $HOME/.config/nvim/config/cpp-enhanced-highlight.vimrc
 source $HOME/.config/nvim/config/keys.vimrc
 source $HOME/.config/nvim/config/whitespace.vimrc
 source $HOME/.config/nvim/config/ansible.vimrc
-source $HOME/.config/nvim/config/python.vimrc
+"source $HOME/.config/nvim/config/python.vimrc
+"source $HOME/.config/nvim/config/cpp.vimrc
 
 " #############################################################################
 " Basic vim configuration
@@ -61,3 +62,7 @@ set encoding=utf-8
 " Search
 set ignorecase
 set smartcase
+
+" Filetype settings
+autocmd Filetype python setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab textwidth=120 fileformat=unix
+autocmd Filetype cpp setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
