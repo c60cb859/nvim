@@ -12,6 +12,7 @@ source $HOME/.config/nvim/config/auto-pairs.vimrc
 source $HOME/.config/nvim/config/deoplete.vimrc
 source $HOME/.config/nvim/config/jedi-vim.vimrc
 source $HOME/.config/nvim/config/cpp-enhanced-highlight.vimrc
+source $HOME/.config/nvim/config/vimwiki.vimrc
 
 source $HOME/.config/nvim/config/keys.vimrc
 source $HOME/.config/nvim/config/whitespace.vimrc
