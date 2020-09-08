@@ -21,6 +21,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" nerdtree
 	Plug 'scrooloose/nerdtree'
+	" Obsession
+	Plug 'tpope/vim-obsession'
 	" programming language linting
 	Plug 'w0rp/ale'
 	" light powerline
