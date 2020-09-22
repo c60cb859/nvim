@@ -13,10 +13,6 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" Colors
-	" dark low contrast colorsheme
-	Plug 'vim-scripts/xoria256.vim'
-	" dark high contrast colorsheme
-	Plug 'tomasr/molokai'
 	Plug 'joshdick/onedark.vim'
 
 	" nerdtree
@@ -31,21 +27,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" git plugin
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
-	" Ansible plugin
-	Plug 'pearofducks/ansible-vim'
-	" Auto pari quotes and brackets
-	Plug 'jiangmiao/auto-pairs'
-	" Auto completion
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'zchee/deoplete-clang', { 'for': ['c', 'cpp'] }
-	Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-	" Python code reference
-	Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
 	" C++ Syntax Highlight
 	Plug 'octol/vim-cpp-enhanced-highlight'
 	" Tags
 	Plug 'ludovicchabant/vim-gutentags', { 'for': ['c', 'cpp'] }
-	Plug 'majutsushi/tagbar', { 'for': ['c', 'cpp'] }
+	" Plug 'majutsushi/tagbar', { 'for': ['c', 'cpp'] }
 
 	" Navigation
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

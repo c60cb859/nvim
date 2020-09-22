@@ -2,23 +2,17 @@
 " File includes
 " #############################################################################
 
-" source $HOME/.config/nvim/config/vundle.vimrc
 source $HOME/.config/nvim/config/plug.vimrc
 source $HOME/.config/nvim/config/nerdtree.vimrc
 source $HOME/.config/nvim/config/ale.vimrc
 source $HOME/.config/nvim/config/airline.vimrc
 source $HOME/.config/nvim/config/gitgutter.vimrc
-source $HOME/.config/nvim/config/auto-pairs.vimrc
-source $HOME/.config/nvim/config/deoplete.vimrc
-source $HOME/.config/nvim/config/jedi-vim.vimrc
+source $HOME/.config/nvim/config/fzf.vimrc
 source $HOME/.config/nvim/config/cpp-enhanced-highlight.vimrc
 source $HOME/.config/nvim/config/vimwiki.vimrc
 
 source $HOME/.config/nvim/config/keys.vimrc
 source $HOME/.config/nvim/config/whitespace.vimrc
-source $HOME/.config/nvim/config/ansible.vimrc
-"source $HOME/.config/nvim/config/python.vimrc
-"source $HOME/.config/nvim/config/cpp.vimrc
 
 " #############################################################################
 " Basic vim configuration
