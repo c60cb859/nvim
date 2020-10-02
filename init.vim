@@ -21,6 +21,7 @@ source $HOME/.config/nvim/config/whitespace.vim
 syntax on "syntax highlight
 set autoindent
 set number "line numbering
+set numberwidth=3
 set cursorline "highlight cursorline
 set noswapfile "turn off swap files
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
