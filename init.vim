@@ -13,6 +13,7 @@ source $HOME/.config/nvim/config/vimwiki.vim
 
 source $HOME/.config/nvim/config/keys.vim
 source $HOME/.config/nvim/config/whitespace.vim
+source $HOME/.config/nvim/config/autocommands.vim
 
 " #############################################################################
 " Basic vim configuration
@@ -59,7 +60,3 @@ set encoding=utf-8
 " Search
 set ignorecase
 set smartcase
-
-" Filetype settings
-autocmd Filetype python setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab textwidth=120 fileformat=unix
-autocmd Filetype cpp setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix

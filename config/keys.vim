@@ -3,6 +3,7 @@
 " #############################################################################
 
 let mapleader = " "
+let maplocalleader = "\\"
 
 " #############################################################################
 " Vim config
@@ -23,8 +24,10 @@ nnoremap <c-q> :q<cr>
 " nnoremap <C-S-C> :qall<cr>
 " Save file ctrl+s
 nnoremap <c-s> :w<cr>
+" Save and close file ctrl+s
+nnoremap <c-w> :wq<cr>
 " Open file ctrl+o
-nnoremap <c-o> :vsplit<cr>:FzfFiles<cr>
+nnoremap <c-o> :FzfFiles<cr>
 
 " #############################################################################
 " Movement
