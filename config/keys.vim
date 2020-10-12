@@ -20,12 +20,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Close file ctrl+q
 nnoremap <c-q> :q<cr>
-" Close all files ctrl+C
-" nnoremap <C-S-C> :qall<cr>
-" Save file ctrl+s
+" save file ctrl+s
 nnoremap <c-s> :w<cr>
-" Save and close file ctrl+s
-nnoremap <c-w> :wq<cr>
 " Open file ctrl+o
 nnoremap <c-o> :FzfFiles<cr>
 
@@ -34,17 +30,16 @@ nnoremap <c-o> :FzfFiles<cr>
 " #############################################################################
 
 " jump to start off line
-nnoremap H 0
-nnoremap 0 <nop>
+" nnoremap H 0
+" nnoremap 0 <nop>
 " jump to end off line
-nnoremap L $
-nnoremap $ <nop>
+" nnoremap L $
+" nnoremap $ <nop>
 
 " #############################################################################
 " Tabs
 " #############################################################################
 
-nnoremap <c-tab> :tabnext<cr>
 
 " #############################################################################
 " Split window
@@ -54,9 +49,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-nnoremap <C-S-I> <C-W>v
-nnoremap <C-_> <C-W>s
 
 "nnoremap <C-S-J> :exe "resize +2"<Return>
 "nnoremap <C-S-K> :exe "resize -2"<Return>
