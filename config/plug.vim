@@ -12,6 +12,10 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+	" CoC
+	" Stable version of coc
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 	" Colors
 	Plug 'joshdick/onedark.vim'
 

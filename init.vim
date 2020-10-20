@@ -3,6 +3,7 @@
 " #############################################################################
 
 source $HOME/.config/nvim/config/plug.vim
+source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/nerdtree.vim
 source $HOME/.config/nvim/config/ale.vim
 source $HOME/.config/nvim/config/airline.vim
