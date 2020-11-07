@@ -1,4 +1,5 @@
 bundle/*
 autoload/*
+spell/*
 tags
 .netrwhist
