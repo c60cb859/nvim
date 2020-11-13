@@ -25,6 +25,9 @@ nnoremap <c-s> :w<cr>
 " Open file ctrl+o
 nnoremap <c-o> :FzfFiles<cr>
 
+" Save file with sudo
+cnoremap w! w !sudo tee % >/dev/null
+
 " #############################################################################
 " Movement
 " #############################################################################
