@@ -71,6 +71,10 @@ noremap <silent> <Down> gj
 " Misc
 " #############################################################################
 
+" Remap terminal exit to esc
+noremap <esc> <C-\><C-n>
+
 " Remap insert mode esc to jk
 inoremap jk <esc>
 inoremap <esc> <nop>
+
