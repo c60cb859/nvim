@@ -25,9 +25,6 @@ nnoremap <c-s> :w<cr>
 " Open file ctrl+o
 nnoremap <c-o> :FzfFiles<cr>
 
-" Save file with sudo
-cnoremap w! w !sudo tee % >/dev/null
-
 " #############################################################################
 " Movement
 " #############################################################################
@@ -53,6 +50,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Terminal mode
+tnoremap <C-J> <C-\><C-N><C-W>j
+tnoremap <C-K> <C-\><C-N><C-W>k
+tnoremap <C-L> <C-\><C-N><C-W>l
+tnoremap <C-H> <C-\><C-N><C-W>h
+
 "nnoremap <C-S-J> :exe "resize +2"<Return>
 "nnoremap <C-S-K> :exe "resize -2"<Return>
 "nnoremap <C-S-L> :exe "vertical resize +2"<Return>
@@ -72,7 +75,7 @@ noremap <silent> <Down> gj
 " #############################################################################
 
 " Remap terminal exit to esc
-noremap <esc> <C-\><C-n>
+tnoremap jk <C-\><C-n>
 
 " Remap insert mode esc to jk
 inoremap jk <esc>

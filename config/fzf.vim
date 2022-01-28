@@ -3,7 +3,7 @@
 " #################################################################
 
 let g:fzf_command_prefix = 'Fzf'
-let g:fzf_prreview_windows = 'right:50%'
+let g:fzf_prreview_windows = ['right:50%', 'crtl-/']
 
 " Config ripgrep to not grep in file names
 command! -bang -nargs=* Rg
