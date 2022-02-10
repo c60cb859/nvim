@@ -43,5 +43,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" Vim Wiki
 	Plug 'vimwiki/vimwiki'
+	" Taskwarrior
+	Plug 'blindFS/vim-taskwarrior'
 
 	call plug#end()

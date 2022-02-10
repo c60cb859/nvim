@@ -13,6 +13,7 @@ source $HOME/.config/nvim/config/cpp-enhanced-highlight.vim
 source $HOME/.config/nvim/config/vimwiki.vim
 
 source $HOME/.config/nvim/config/keys.vim
+source $HOME/.config/nvim/config/folds.vim
 source $HOME/.config/nvim/config/whitespace.vim
 source $HOME/.config/nvim/config/autocommands.vim
 
