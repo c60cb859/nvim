@@ -12,19 +12,15 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-	" CoC
-	" Stable version of coc
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+	" LSP
+	Plug 'neovim/nvim-lspconfig'
 	" Colors
 	Plug 'joshdick/onedark.vim'
-
+	Plug 'sheerun/vim-polyglot'
 	" nerdtree
 	Plug 'scrooloose/nerdtree'
 	" Obsession
 	Plug 'tpope/vim-obsession'
-	" programming language linting
-	Plug 'w0rp/ale'
 	" light powerline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
