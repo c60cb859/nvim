@@ -27,8 +27,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" git plugin
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
-	" C++ Syntax Highlight
-	Plug 'octol/vim-cpp-enhanced-highlight'
+	" Syntax Highlight
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	" C++ source header switcher
 	Plug 'derekwyatt/vim-fswitch'
 	" Tags

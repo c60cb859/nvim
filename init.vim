@@ -7,7 +7,6 @@ source $HOME/.config/nvim/config/nerdtree.vim
 source $HOME/.config/nvim/config/airline.vim
 source $HOME/.config/nvim/config/gitgutter.vim
 source $HOME/.config/nvim/config/fzf.vim
-source $HOME/.config/nvim/config/cpp-enhanced-highlight.vim
 source $HOME/.config/nvim/config/vimwiki.vim
 source $HOME/.config/nvim/config/cppman.vim
 source $HOME/.config/nvim/config/fswitch.vim
@@ -18,6 +17,7 @@ source $HOME/.config/nvim/config/whitespace.vim
 source $HOME/.config/nvim/config/autocommands.vim
 
 lua require('lsp')
+lua require('treesitter')
 
 " #############################################################################
 " Lua fun
