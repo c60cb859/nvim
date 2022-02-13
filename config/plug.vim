@@ -29,8 +29,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'tpope/vim-fugitive'
 	" C++ Syntax Highlight
 	Plug 'octol/vim-cpp-enhanced-highlight'
+	" C++ source header switcher
+	Plug 'derekwyatt/vim-fswitch'
 	" Tags
-	Plug 'ludovicchabant/vim-gutentags', { 'for': ['c', 'cpp'] }
+	"Plug 'ludovicchabant/vim-gutentags', { 'for': ['c', 'cpp'] }
 	" Plug 'majutsushi/tagbar', { 'for': ['c', 'cpp'] }
 
 	" Navigation

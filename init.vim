@@ -9,6 +9,8 @@ source $HOME/.config/nvim/config/gitgutter.vim
 source $HOME/.config/nvim/config/fzf.vim
 source $HOME/.config/nvim/config/cpp-enhanced-highlight.vim
 source $HOME/.config/nvim/config/vimwiki.vim
+source $HOME/.config/nvim/config/cppman.vim
+source $HOME/.config/nvim/config/fswitch.vim
 
 source $HOME/.config/nvim/config/keys.vim
 source $HOME/.config/nvim/config/folds.vim
