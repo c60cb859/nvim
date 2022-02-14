@@ -1,6 +1,6 @@
 noevim
 fzf
-ctags
 powerline-fonts
-nodejs
 clang
+ccls
+cppman
