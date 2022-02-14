@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo pacman -S --needed fzf ctags powerline-fonts nodejs clangd
+sudo pacman -S --needed fzf powerline-fonts ccls cppman
