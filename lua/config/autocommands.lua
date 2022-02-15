@@ -17,6 +17,7 @@ vim.cmd [[
     autocmd Filetype c setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
     autocmd Filetype cmake setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
     autocmd Filetype xml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
+    autocmd Filetype lua setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
   augroup end
 ]]
 -- Bad whitespace highlighting
@@ -29,6 +30,13 @@ vim.cmd [[
     autocmd BufRead,BufNewFile * match BadWhitespace /\s\+$/
     " au BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h,*.hpp match BadWhitespace /^\t\+/
     autocmd Filetype python,cpp,c,cmake match BadWhitespace /^\t\+/
+  augroup end
+]]
+-- Auto insert mode when switching to terminal
+vim.cmd [[
+  augroup terminalSettings
+    autocmd!
+    autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
   augroup end
 ]]
 -- C++ man pages
