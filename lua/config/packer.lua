@@ -42,31 +42,28 @@ packer.init {
 return packer.startup(function(use)
   -- Packer
   use "wbthomason/packer.nvim"
-	-- LSP
-	use 'neovim/nvim-lspconfig'
-	-- Colorschemes
-	use 'joshdick/onedark.vim'
-	use 'sheerun/vim-polyglot'
-	-- Obsession
-	use 'tpope/vim-obsession'
-	-- light powerline
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
-	-- git plugin
-	use 'airblade/vim-gitgutter'
-	use 'tpope/vim-fugitive'
-	-- C++ source header switcher
-	use 'derekwyatt/vim-fswitch'
-	-- Navigation
-  use {
-    "junegunn/fzf",
-    run = "fzf#install"
-  }
-	use 'junegunn/fzf.vim'
-	-- Vim Wiki
-	use 'vimwiki/vimwiki'
-	-- Taskwarrior
-	use 'blindFS/vim-taskwarrior'
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  -- Colorschemes
+  use 'joshdick/onedark.vim'
+  use 'sheerun/vim-polyglot'
+  -- Obsession
+  use 'tpope/vim-obsession'
+  -- light powerline
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
+  -- git plugin
+  use 'airblade/vim-gitgutter'
+  use 'tpope/vim-fugitive'
+  -- C++ source header switcher
+  use 'derekwyatt/vim-fswitch'
+  -- Navigation
+  use 'junegunn/fzf'
+  use 'junegunn/fzf.vim'
+  -- Vim Wiki
+  use 'vimwiki/vimwiki'
+  -- Taskwarrior
+  use 'blindFS/vim-taskwarrior'
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
