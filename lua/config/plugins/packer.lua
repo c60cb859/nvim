@@ -15,11 +15,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Autocommand that reloads neovim whenever you save the packer.lua file
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -43,45 +43,63 @@ packer.init {
 return packer.startup(function(use)
   -- Packer
   use "wbthomason/packer.nvim"
+
   -- Colorschemes
   use 'joshdick/onedark.vim'
   use 'sheerun/vim-polyglot'
+
   -- Obsession
   use 'tpope/vim-obsession'
-  -- light powerline
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+
+  -- lualine
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = false }
+  }
   -- git plugin
   use 'airblade/vim-gitgutter'
   use 'tpope/vim-fugitive'
+
   -- Navigation
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
+
   -- Vim Wiki
   use 'vimwiki/vimwiki'
+
   -- Taskwarrior
   use 'blindFS/vim-taskwarrior'
+
   -- LSP
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+
   -- Auto Completion
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  -- Lua Completion
+  use "hrsh7th/cmp-nvim-lua"
+
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- C++ source header switcher
+  use 'derekwyatt/vim-fswitch'
+
+  -- Yocto bitbake syntax
+  use 'kergoth/vim-bitbake'
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  -- C++ source header switcher
-  use 'derekwyatt/vim-fswitch'
-  -- Yocto bitbake syntax
-  use 'kergoth/vim-bitbake'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
