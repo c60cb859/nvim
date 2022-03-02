@@ -2,12 +2,13 @@
 vim.cmd [[
   augroup filetypeComments
     autocmd!
-    autocmd Filetype vim nnoremap <buffer> <localleader>c I" <esc>
-    autocmd Filetype lua nnoremap <buffer> <localleader>c I-- <esc>
-    autocmd Filetype python nnoremap <buffer> <localleader>c I# <esc>
-    autocmd Filetype cpp nnoremap <buffer> <localleader>c I// <esc>
+    autocmd Filetype vim nnoremap <buffer> <leader>c I" <esc>
+    autocmd Filetype lua nnoremap <buffer> <leader>c I-- <esc>
+    autocmd Filetype python nnoremap <buffer> <leader>c I# <esc>
+    autocmd Filetype cpp nnoremap <buffer> <leader>c I// <esc>
   augroup end
 ]]
+
 -- Whitespace settings for diffrent filetypes
 vim.cmd [[
   augroup filetypeSettings
@@ -20,6 +21,7 @@ vim.cmd [[
     autocmd Filetype lua setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
   augroup end
 ]]
+
 -- Bad whitespace highlighting
 vim.cmd [[
   augroup badwhitespace
@@ -32,6 +34,7 @@ vim.cmd [[
     autocmd Filetype python,cpp,c,cmake match BadWhitespace /^\t\+/
   augroup end
 ]]
+
 -- Auto insert mode when switching to terminal
 vim.cmd [[
   augroup terminalSettings
@@ -39,6 +42,7 @@ vim.cmd [[
     autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
   augroup end
 ]]
+
 -- C++ man pages
 vim.cmd [[
   function! s:CppMan()
