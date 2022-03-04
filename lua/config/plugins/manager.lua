@@ -44,6 +44,9 @@ return packer.startup(function(use)
   -- Packer
   use "wbthomason/packer.nvim"
 
+  -- Lua helper plugin
+  use 'nvim-lua/plenary.nvim'
+
   -- Colorschemes
   use 'joshdick/onedark.vim'
   use 'sheerun/vim-polyglot'
@@ -57,8 +60,9 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = false }
   }
   -- git plugin
-  use 'airblade/vim-gitgutter'
-  use 'tpope/vim-fugitive'
+  -- use 'airblade/vim-gitgutter'
+  -- use 'tpope/vim-fugitive'
+  use 'lewis6991/gitsigns.nvim'
 
   -- Navigation
   use 'junegunn/fzf'
@@ -81,6 +85,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
 
   -- Lua Completion
   use "hrsh7th/cmp-nvim-lua"
