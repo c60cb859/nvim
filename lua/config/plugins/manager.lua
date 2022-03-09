@@ -69,7 +69,7 @@ return packer.startup(function(use)
   use 'junegunn/fzf.vim'
 
   -- Vim Wiki
-  use 'vimwiki/vimwiki'
+  use {'vimwiki/vimwiki', branch = 'dev'}
 
   -- Taskwarrior
   use 'blindFS/vim-taskwarrior'
@@ -85,7 +85,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
 
   -- Lua Completion
   use "hrsh7th/cmp-nvim-lua"

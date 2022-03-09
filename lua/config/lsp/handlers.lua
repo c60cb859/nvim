@@ -33,7 +33,6 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-
 local Handler = {}
 
 -- TODO: backfill this to template
