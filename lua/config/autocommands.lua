@@ -19,6 +19,7 @@ vim.cmd [[
     autocmd Filetype cmake setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
     autocmd Filetype xml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
     autocmd Filetype lua setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
+    autocmd Filetype vimwiki setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
   augroup end
 ]]
 
