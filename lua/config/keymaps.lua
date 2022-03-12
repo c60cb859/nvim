@@ -25,6 +25,8 @@ keymap("", "k", "gk", opts)
 keymap("", "j", "gj", opts)
 
 -- Normal mode --
+-- Disable keys
+keymap("n", "Q", "", opts)
 -- Quite, save and open shotcuts
 keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
