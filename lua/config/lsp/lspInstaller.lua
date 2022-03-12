@@ -8,7 +8,8 @@ local servers = {
   "sumneko_lua", -- requires unzip
   "pyright", -- requires npm
   "cmake",
-  "clangd"
+  "clangd",
+  "bashls"
 }
 
 for _, name in pairs(servers) do
