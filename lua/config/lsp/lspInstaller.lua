@@ -9,6 +9,7 @@ local servers = {
   "pyright", -- requires npm
   "cmake",
   "clangd",
+  "zeta_note",
   "bashls"
 }
 

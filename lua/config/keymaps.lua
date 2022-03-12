@@ -30,7 +30,8 @@ keymap("n", "Q", "", opts)
 -- Quite, save and open shotcuts
 keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
-keymap("n", "<c-o>", ":FzfFiles<cr>", opts)
+--keymap("n", "<c-o>", ":FzfFiles<cr>", opts)
+keymap("n", "<c-o>", ":FzfLua files<cr>", opts)
 -- Move between split windows
 keymap("n", "<c-j>", "<c-w><c-j>", opts)
 keymap("n", "<c-k>", "<c-w><c-k>", opts)
@@ -42,11 +43,7 @@ keymap("n", "<S-h>", ":bprevious<cr>", opts)
 -- Remove bad whitespaces
 keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>", opts)
 -- fswitch keymap
-keymap("n", "<leader>ss", ":FSHere<cr>", opts)
-keymap("n", "<leader>sh", ":FSSplitLeft<cr>", opts)
-keymap("n", "<leader>sj", ":FSSplitBelow<cr>", opts)
-keymap("n", "<leader>sk", ":FSSplitAbove<cr>", opts)
-keymap("n", "<leader>sl", ":FSSplitRight<cr>", opts)
+keymap("n", "<leader>ss", ":ClangdSwitchSourceHeader<cr>", opts)
 
 -- Insert mode --
 -- Remap insert exit to jk

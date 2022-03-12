@@ -60,13 +60,12 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = false }
   }
   -- git plugin
-  -- use 'airblade/vim-gitgutter'
-  -- use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
 
   -- Navigation
-  use 'junegunn/fzf'
-  use 'junegunn/fzf.vim'
+  -- use 'junegunn/fzf'
+  -- use 'junegunn/fzf.vim'
+  use 'ibhagwan/fzf-lua'
 
   -- Vim Wiki
   use {'vimwiki/vimwiki', branch = 'dev'}
@@ -83,7 +82,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use 'hrsh7th/cmp-nvim-lsp'
 
   -- Lua Completion
@@ -91,10 +89,8 @@ return packer.startup(function(use)
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-  -- C++ source header switcher
-  use 'derekwyatt/vim-fswitch'
 
   -- Yocto bitbake syntax
   use 'kergoth/vim-bitbake'
