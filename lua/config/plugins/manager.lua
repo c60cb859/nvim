@@ -63,8 +63,6 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   -- Navigation
-  -- use 'junegunn/fzf'
-  -- use 'junegunn/fzf.vim'
   use 'ibhagwan/fzf-lua'
 
   -- Vim Wiki

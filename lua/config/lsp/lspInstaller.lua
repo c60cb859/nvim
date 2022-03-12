@@ -21,6 +21,9 @@ for _, name in pairs(servers) do
   end
 end
 
+-- Remove boarder on installer window
+vim.cmd [[ autocmd Filetype lsp-installer lua vim.api.nvim_win_set_config(0, { border = "none" }) ]]
+
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)

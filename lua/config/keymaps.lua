@@ -30,8 +30,11 @@ keymap("n", "Q", "", opts)
 -- Quite, save and open shotcuts
 keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
---keymap("n", "<c-o>", ":FzfFiles<cr>", opts)
-keymap("n", "<c-o>", ":FzfLua files<cr>", opts)
+-- FZF keymaps
+keymap("n", "<c-o>", "<cmd>lua require('fzf-lua').files()<cr>", opts)
+keymap("n", "<c-i>", "<cmd>lua require('fzf-lua').buffers()<cr>", opts)
+keymap("n", "<c-p>", "<cmd>lua require('fzf-lua').live_grep()<cr>", opts)
+keymap("n", "z=", "<cmd>lua require('fzf-lua').spell_suggest()<cr>", opts)
 -- Move between split windows
 keymap("n", "<c-j>", "<c-w><c-j>", opts)
 keymap("n", "<c-k>", "<c-w><c-k>", opts)
@@ -42,7 +45,7 @@ keymap("n", "<S-l>", ":bnext<cr>", opts)
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
 -- Remove bad whitespaces
 keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>", opts)
--- fswitch keymap
+-- C/C++ switch between header and source keymap
 keymap("n", "<leader>ss", ":ClangdSwitchSourceHeader<cr>", opts)
 
 -- Insert mode --
