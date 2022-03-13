@@ -48,8 +48,8 @@ local lsp = {
   icons = {
     ["Error"] = { icon = "", color = "red" },
     ["Warning"] = { icon = "", color = "yellow" },
-    ["Information"] = { icon = "", color = "blue" },
-    ["Hint"] = { icon = "", color = "magenta" },
+    ["Information"] = { icon = "", color = "magenta" },
+    ["Hint"] = { icon = "", color = "blue" },
   },
 }
 
