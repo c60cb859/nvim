@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-local termOpts = { silent = true }
+--local termOpts = { silent = true }
 
 -- Short keymap function
 local keymap = vim.api.nvim_set_keymap
@@ -65,5 +65,5 @@ keymap("v", "K", ":move '<-2<cr>gv-gv", opts)
 
 -- Terminal mode --
 -- Remap terminal exit to jk
-keymap("t", "jk", "<c-\\><c-n>", termOpts)
+--keymap("t", "<esc>", "<c-\\><c-n>", termOpts)
 
