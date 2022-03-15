@@ -10,7 +10,8 @@ local servers = {
   "cmake",
   "clangd",
   "zeta_note",
-  "bashls"
+  "bashls",
+  "lemminx",
 }
 
 for _, name in pairs(servers) do
@@ -33,28 +34,43 @@ lsp_installer.on_server_ready(function(server)
   }
 
   if server.name == "jsonls" then
-    local jsonls_opts = require("config.lsp.settings.jsonls")
-    opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+    local server_opts = require("config.lsp.settings.jsonls")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
   if server.name == "sumneko_lua" then
-    local sumneko_opts = require("config.lsp.settings.sumneko_lua")
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    local server_opts = require("config.lsp.settings.sumneko_lua")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
   if server.name == "pyright" then
-    local pyright_opts = require("config.lsp.settings.pyright")
-    opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+    local server_opts = require("config.lsp.settings.pyright")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
-  if server.name == "ccls" then
-    local ccls_opts = require("config.lsp.settings.ccls")
-    opts = vim.tbl_deep_extend("force", ccls_opts, opts)
+  if server.name == "cmake" then
+    local server_opts = require("config.lsp.settings.cmake")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
   if server.name == "clangd" then
-    local clangd_opts = require("config.lsp.settings.clangd")
-    opts = vim.tbl_deep_extend("force", clangd_opts, opts)
+    local server_opts = require("config.lsp.settings.clangd")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
+  end
+
+  if server.name == "zeta_note" then
+    local server_opts = require("config.lsp.settings.zeta_note")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
+  end
+
+  if server.name == "bashls" then
+    local server_opts = require("config.lsp.settings.bashls")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
+  end
+
+  if server.name == "lemminx" then
+    local server_opts = require("config.lsp.settings.lemminx")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
   -- This setup() function is exactly the same as lspconfig's setup function.
