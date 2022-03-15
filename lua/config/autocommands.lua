@@ -55,5 +55,5 @@ vim.cmd [[
   endfunction
   command! CppMan :call s:CppMan()
 
-  au FileType cpp nnoremap <buffer>K :CppMan<CR>
+  au FileType cpp nnoremap <buffer>M :CppMan<CR>
 ]]
