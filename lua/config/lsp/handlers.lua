@@ -61,8 +61,8 @@ Handler.setup = function()
     float = {
       focusable = false,
       style = "minimal",
-      border = "none",
-      source = "always",
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      source = true,
       header = "",
       prefix = "",
     },
