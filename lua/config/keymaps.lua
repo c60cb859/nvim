@@ -7,8 +7,8 @@ local keymap = vim.api.nvim_set_keymap
 -- Remap space as leader key
 keymap("", "<space>", "<nop>", opts)
 keymap("", ";", "<nop>", opts)
-vim.g.mapleader = ";"
-vim.g.maplocalleader = " "
+vim.g.mapleader = " "
+vim.g.maplocalleader = ";"
 
 -- Modes
 --   all         = "",
@@ -31,9 +31,9 @@ keymap("n", "Q", "", opts)
 keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
 -- FZF keymaps
-keymap("n", "<c-o>", "<cmd>lua require('fzf-lua').files()<cr>", opts)
-keymap("n", "<c-i>", "<cmd>lua require('fzf-lua').buffers()<cr>", opts)
-keymap("n", "<c-p>", "<cmd>lua require('fzf-lua').grep_project()<cr>", opts)
+keymap("n", "<leader>o", "<cmd>lua require('fzf-lua').files()<cr>", opts)
+keymap("n", "<leader>i", "<cmd>lua require('fzf-lua').buffers()<cr>", opts)
+keymap("n", "<leader>p", "<cmd>lua require('fzf-lua').grep_project()<cr>", opts)
 keymap("n", "z=", "<cmd>lua require('fzf-lua').spell_suggest()<cr>", opts)
 -- Move between split windows
 keymap("n", "<c-j>", "<c-w><c-j>", opts)
