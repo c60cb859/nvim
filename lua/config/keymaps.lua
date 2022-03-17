@@ -40,9 +40,6 @@ keymap("n", "<c-j>", "<c-w><c-j>", opts)
 keymap("n", "<c-k>", "<c-w><c-k>", opts)
 keymap("n", "<c-l>", "<c-w><c-l>", opts)
 keymap("n", "<c-h>", "<c-w><c-h>", opts)
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<cr>", opts)
-keymap("n", "<S-h>", ":bprevious<cr>", opts)
 -- Remove bad whitespaces
 keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>", opts)
 -- C/C++ switch between header and source keymap
