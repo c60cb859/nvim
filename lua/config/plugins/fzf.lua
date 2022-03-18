@@ -25,6 +25,7 @@ local keymap = {
 
 local files = {
   prompt = ' ',
+  fd_opts = "--type f --hidden --follow --color=never --exclude .git --exclude .cache",
 }
 
 local grep = {
