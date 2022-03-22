@@ -96,6 +96,10 @@ return packer.startup(function(use)
   -- Diagrams
   use "jbyuki/venn.nvim"
 
+  -- bufMov
+  --use "/home/theis/git/bufMov"
+  use "c60cb859/bufMov.nvim"
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
