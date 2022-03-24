@@ -1,17 +1,17 @@
 local fn = vim.fn
 
 -- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim',
     install_path,
   }
-  print "Installing packer close and reopen Neovim..."
+  print 'Installing packer close and reopen Neovim...'
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -24,9 +24,9 @@ vim.cmd [[
 ]]
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
+local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
-  vim.notify("Packer not found!")
+  vim.notify('Packer not found!')
   return
 end
 
@@ -34,7 +34,7 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require('packer.util').float { border = 'rounded' }
     end,
   },
 }
@@ -42,7 +42,7 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- Packer
-  use "wbthomason/packer.nvim"
+  use 'wbthomason/packer.nvim'
 
   -- Lua helper plugin
   use 'nvim-lua/plenary.nvim'
@@ -77,38 +77,40 @@ return packer.startup(function(use)
 
   -- Auto Completion
   use 'hrsh7th/nvim-cmp'
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use 'hrsh7th/cmp-buffer' -- buffer completions
+  use 'hrsh7th/cmp-path' -- path completions
+  use 'hrsh7th/cmp-cmdline' -- cmdline completions
   use 'hrsh7th/cmp-nvim-lsp'
 
   -- Lua Completion
-  use "hrsh7th/cmp-nvim-lua"
+  use 'hrsh7th/cmp-nvim-lua'
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use 'L3MON4D3/LuaSnip' --snippet engine
+  use 'saadparwaiz1/cmp_luasnip' -- snippet completions
+  use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
 
   -- Yocto bitbake syntax
   use 'kergoth/vim-bitbake'
 
   -- Diagrams
-  use "jbyuki/venn.nvim"
+  use 'jbyuki/venn.nvim'
 
   -- bufMov
-  --use "/home/theis/git/bufMov"
-  use "c60cb859/bufMov.nvim"
+  --use '/home/theis/git/bufMov'
+  use 'c60cb859/bufMov.nvim'
 
   -- Treesitter
   use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
   }
+  -- Spelling syntax highlight
+  use 'lewis6991/spellsitter.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
-    require("packer").sync()
+    require('packer').sync()
   end
 end)
