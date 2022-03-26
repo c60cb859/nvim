@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local parsers = {
+local parsers_to_install = {
   'bash',
   'bibtex',
   'c',
@@ -23,7 +23,6 @@ local parsers = {
   'jsdoc',
   'json',
   'json5',
-  'JSON with comments',
   'latex',
   'llvm',
   'lua',
@@ -33,7 +32,6 @@ local parsers = {
   'perl',
   'pioasm',
   'python',
-  'Tree-sitter query language',
   'rasi',
   'regex',
   'rst',
@@ -46,10 +44,10 @@ local parsers = {
   'verilog',
   'vim',
   'yaml',
-},
+}
 
 configs.setup {
-  ensure_installed = parsers, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = parsers_to_install, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
