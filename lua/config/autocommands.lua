@@ -13,13 +13,17 @@ vim.cmd [[
 vim.cmd [[
   augroup filetypeSettings
     autocmd!
-    autocmd Filetype python setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab textwidth=120 fileformat=unix
-    autocmd Filetype cpp setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
-    autocmd Filetype c setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
-    autocmd Filetype cmake setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
-    autocmd Filetype xml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
-    autocmd Filetype lua setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
-    autocmd Filetype vimwiki setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab textwidth=120 fileformat=unix
+    autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  augroup end
+]]
+
+-- Turn on spell checking for filetypes
+vim.cmd [[
+  augroup spellCheckingEnabled
+    autocmd!
+    autocmd FileType gitcommit setlocal spell
+    autocmd FileType markdown setlocal spell
+    autocmd FileType vimwiki setlocal spell
   augroup end
 ]]
 
