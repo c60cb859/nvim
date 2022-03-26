@@ -33,10 +33,10 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local Handler = {}
+local M = {}
 
 -- TODO: backfill this to template
-Handler.setup = function()
+M.setup = function()
   local signs = {
     { name = "DiagnosticSignError", text = "" },
     { name = "DiagnosticSignWarn", text = "" },
@@ -71,7 +71,7 @@ Handler.setup = function()
   vim.diagnostic.config(config)
 end
 
-Handler.on_attach = function(client, bufnr)
+M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
@@ -84,6 +84,6 @@ if not status_ok then
   return
 end
 
-Handler.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
-return Handler
+return M
