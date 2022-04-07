@@ -1,3 +1,14 @@
+-- Filetype detection
+vim.cmd [[
+  augroup filetypeDecteion
+    autocmd!
+    autocmd BufRead,BufNewFile *.asm setfiletype asm
+    autocmd BufRead,BufNewFile *.nasm setfiletype nasm
+    autocmd BufRead,BufNewFile *.fasm setfiletype fasm
+    autocmd BufRead,BufNewFile *.masm setfiletype masm
+  augroup end
+]]
+
 -- Comment for different filetypes
 vim.cmd [[
   augroup filetypeComments
@@ -60,4 +71,18 @@ vim.cmd [[
   command! CppMan :call s:CppMan()
 
   au FileType cpp nnoremap <buffer>M :CppMan<CR>
+]]
+
+-- cgasm
+vim.cmd [[
+  function! s:Cgasm()
+    let old_isk = &iskeyword
+    setl iskeyword+=:
+    let str = expand("<cword>")
+    let &l:iskeyword = old_isk
+    execute '!cgasm ' . str
+  endfunction
+  command! Cgasm :call s:Cgasm()
+
+  au FileType asm,nasm,fasm nnoremap <buffer>M :Cgasm<CR>
 ]]
