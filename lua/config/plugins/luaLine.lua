@@ -1,3 +1,5 @@
+
+
 local filename = {
   'filename',
   file_status = true,      -- Displays file status (readonly status, modified status)
@@ -22,6 +24,7 @@ require('lualine').setup {
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
+    globalstatus = true,
   },
   sections = {
     lualine_a = {'mode'},
