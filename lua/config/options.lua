@@ -8,6 +8,7 @@ local options = {
   foldclose = "all",
   foldcolumn = "0",
   ignorecase = true,
+  laststatus = 3,
   number = true,
   numberwidth = 1,
   relativenumber = true,
