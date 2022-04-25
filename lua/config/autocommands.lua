@@ -1,32 +1,31 @@
--- Filetype detection
-vim.cmd [[
-  augroup filetypeDecteion
-    autocmd!
-    autocmd BufRead,BufNewFile *.asm setfiletype asm
-    autocmd BufRead,BufNewFile *.nasm setfiletype nasm
-    autocmd BufRead,BufNewFile *.fasm setfiletype fasm
-    autocmd BufRead,BufNewFile *.masm setfiletype masm
-  augroup end
-]]
+local buf = vim.bo
 
--- Comment for different filetypes
-vim.cmd [[
-  augroup filetypeComments
-    autocmd!
-    autocmd Filetype vim nnoremap <buffer> <leader>c I" <esc>
-    autocmd Filetype lua nnoremap <buffer> <leader>c I-- <esc>
-    autocmd Filetype python nnoremap <buffer> <leader>c I# <esc>
-    autocmd Filetype cpp nnoremap <buffer> <leader>c I// <esc>
-  augroup end
-]]
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
--- Whitespace settings for diffrent filetypes
-vim.cmd [[
-  augroup filetypeSettings
-    autocmd!
-    autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
-  augroup end
-]]
+
+local filetypeGroup = augroup('Filetype detection', { clear = true })
+
+autocmd('BufRead,BufNewFile', { pattern = '*.asm', callback = function() buf.filetype = 'asm' end, group = filetypeGroup })
+autocmd('BufRead,BufNewFile', { pattern = '*.nasm', callback = function() buf.filetype = 'nasm' end, group = filetypeGroup })
+autocmd('BufRead,BufNewFile', { pattern = '*.fasm', callback = function() buf.filetype = 'fasm' end, group = filetypeGroup })
+autocmd('BufRead,BufNewFile', { pattern = '*.masm', callback = function() buf.filetype = 'masm' end, group = filetypeGroup })
+
+
+local whitespaceGroup = augroup('Whitespace settings', { clear = true })
+
+autocmd('Filetype', {
+    pattern = 'python',
+    callback = function()
+      buf.tabstop = 4
+      buf.softtabstop = 4
+      buf.shiftwidth = 4
+    end,
+    group = whitespaceGroup
+  })
+
+--local spellChecking = augroup('Enable spellchecking', { clear = true })
+--autocmd('Filetype', { pattern = 'gitcommit,markdown,vimwiki', callback = function() vim.bo.spell = true end, group = spellChecking })
 
 -- Turn on spell checking for filetypes
 vim.cmd [[
