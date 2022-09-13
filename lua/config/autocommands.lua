@@ -85,3 +85,11 @@ vim.cmd [[
 
   au FileType asm,nasm,fasm nnoremap <buffer>M :Cgasm<CR>
 ]]
+
+-- Rust
+vim.cmd [[
+  augroup rustFormat
+    autocmd!
+    autocmd BufWrite *.rs :Autoformat
+  augroup end
+]]

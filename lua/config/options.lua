@@ -13,6 +13,7 @@ local options = {
   numberwidth = 1,
   relativenumber = true,
   shiftwidth = 2,
+  signcolumn = "number",
   smartcase = true,
   smartindent = true,
   softtabstop = 2,

@@ -107,6 +107,8 @@ return packer.startup(function(use)
   }
   -- Spelling syntax highlight
   use 'lewis6991/spellsitter.nvim'
+  -- Formatter (rust)
+  use 'Chiel92/vim-autoformat'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
