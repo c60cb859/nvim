@@ -12,6 +12,7 @@ local servers = {
   "zeta_note",
   "bashls",
   "lemminx",
+  "rust_analyzer",
 }
 
 for _, name in pairs(servers) do
@@ -70,6 +71,11 @@ lsp_installer.on_server_ready(function(server)
 
   if server.name == "lemminx" then
     local server_opts = require("config.lsp.settings.lemminx")
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
+  end
+
+  if server.name == "rust_analyzer" then
+    local server_opts = require("config.lsp.settings.rust_analyzer")
     opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
