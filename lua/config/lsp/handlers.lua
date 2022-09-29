@@ -8,7 +8,7 @@ local function lsp_keymaps(bufnr) local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>O", "<cmd>lua vim.lsp.buf.outgoing_calls()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+--  vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
@@ -25,9 +25,9 @@ local function lsp_highlight_document(client)
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
-        highlight LspReferenceRead ctermbg=red guibg=#4b5263
         highlight LspReferenceText ctermbg=red guibg=#4b5263
-        highlight LspReferenceWrite ctermbg=red guibg=#4b5263
+        highlight LspReferenceRead ctermbg=red guifg=#56b6c2 guibg=#4b5263
+        highlight LspReferenceWrite ctermbg=red guifg=#d19a66 guibg=#4b5263
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()

@@ -105,6 +105,8 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
+  use 'p00f/nvim-ts-rainbow'
+
   -- Spelling syntax highlight
   use 'lewis6991/spellsitter.nvim'
   -- Formatter (rust)

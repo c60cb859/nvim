@@ -32,7 +32,7 @@ keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
 -- FZF keymaps
 keymap("n", "<leader>o", "<cmd>lua require('fzf-lua').files()<cr>", opts)
-keymap("n", "<leader>i", "<cmd>lua require('fzf-lua').buffers()<cr>", opts)
+keymap("n", "<leader>b", "<cmd>lua require('fzf-lua').buffers()<cr>", opts)
 keymap("n", "<leader>p", "<cmd>lua require('fzf-lua').grep_project()<cr>", opts)
 keymap("n", "z=", "<cmd>lua require('fzf-lua').spell_suggest()<cr>", opts)
 -- Move between split windows
