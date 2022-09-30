@@ -105,6 +105,7 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
+  use 'nvim-treesitter/playground'
   use 'p00f/nvim-ts-rainbow'
 
   -- Spelling syntax highlight

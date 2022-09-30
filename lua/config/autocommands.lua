@@ -24,25 +24,25 @@ autocmd('Filetype', {
     group = whitespaceGroup
   })
 
---local spellChecking = augroup('Enable spellchecking', { clear = true })
---autocmd('Filetype', { pattern = 'gitcommit,markdown,vimwiki', callback = function() vim.bo.spell = true end, group = spellChecking })
-
 -- Turn on spell checking for filetypes
-vim.cmd [[
-  augroup spellCheckingEnabled
-    autocmd!
-    autocmd FileType gitcommit setlocal spell
-    autocmd FileType markdown setlocal spell
-    autocmd FileType vimwiki setlocal spell
-  augroup end
-]]
+local spellChecking = augroup('Enable spellchecking', { clear = true })
+autocmd('Filetype', { pattern = 'gitcommit,markdown,vimwiki', callback = function() vim.wo.spell = true end, group = spellChecking })
+
 
 -- Bad whitespace highlighting
+--local badwhitespace = augroup('Highlight bad whitespacer', { clear = true })
+--autocmd('BufRead,BufNewFile', {
+--    callback = function()
+--      vim.bo.match
+--    end,
+--    group = badwhitespace
+--  })
+
 vim.cmd [[
   augroup badwhitespace
     autocmd!
     " Define BadWhitespace
-    autocmd Colorscheme * highlight BadWhitespace ctermbg=red guibg=red
+    autocmd Colorscheme * highlight BadWhitespace ctermbg=red guibg=#be5046
     " Flagging Unnecessary Whitespace
     autocmd BufRead,BufNewFile * match BadWhitespace /\s\+$/
     " au BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h,*.hpp match BadWhitespace /^\t\+/
