@@ -16,12 +16,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the manager.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost manager.lua source <afile> | PackerSync
-  augroup end
-]]
+local packer_user_config = vim.api.nvim_create_augroup('Packer config on save', { clear = true })
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = 'manager.lua',
+  command = 'source <afile> | PackerSync',
+  group = packer_user_config,
+})
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, 'packer')
@@ -43,17 +44,12 @@ packer.init {
 return packer.startup(function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
-
   -- Lua helper plugin
   use 'nvim-lua/plenary.nvim'
-
   -- Colorschemes
-  use 'joshdick/onedark.vim'
-  use 'sheerun/vim-polyglot'
-
+  use 'navarasu/onedark.nvim'
   -- Obsession
   use 'tpope/vim-obsession'
-
   -- lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -61,45 +57,32 @@ return packer.startup(function(use)
   }
   -- git plugin
   use 'lewis6991/gitsigns.nvim'
-
   -- Navigation
   use 'ibhagwan/fzf-lua'
-
   -- Vim Wiki
   use {'vimwiki/vimwiki', branch = 'dev'}
-
-  -- Taskwarrior
-  use 'blindFS/vim-taskwarrior'
-
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
-
   -- Auto Completion
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer' -- buffer completions
   use 'hrsh7th/cmp-path' -- path completions
   use 'hrsh7th/cmp-cmdline' -- cmdline completions
   use 'hrsh7th/cmp-nvim-lsp'
-
   -- Lua Completion
   use 'hrsh7th/cmp-nvim-lua'
-
   -- snippets
   use 'L3MON4D3/LuaSnip' --snippet engine
   use 'saadparwaiz1/cmp_luasnip' -- snippet completions
   use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
-
   -- Yocto bitbake syntax
   use 'kergoth/vim-bitbake'
-
   -- Diagrams
   use 'jbyuki/venn.nvim'
-
   -- bufMov
   --use '/home/theis/git/bufMov'
   use 'c60cb859/bufMov.nvim'
-
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -107,11 +90,9 @@ return packer.startup(function(use)
   }
   use 'nvim-treesitter/playground'
   use 'p00f/nvim-ts-rainbow'
-
   -- Spelling syntax highlight
   use 'lewis6991/spellsitter.nvim'
-  -- Formatter (rust)
-  --use 'Chiel92/vim-autoformat'
+  -- Formatter
   use 'vim-autoformat/vim-autoformat'
 
   -- Automatically set up your configuration after cloning packer.nvim
