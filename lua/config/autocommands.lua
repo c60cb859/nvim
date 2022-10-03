@@ -24,16 +24,6 @@ autocmd('Filetype', {
   group = whitespaceGroup
 })
 
--- Turn on spell checking for filetypes
-local spellChecking = augroup('Enable spellchecking', { clear = true })
-
-autocmd('Filetype', {
-  pattern = 'gitcommit,markdown,vimwiki',
-  command = 'setlocal spell',
-  group = spellChecking
-})
-
-
 -- Bad whitespace highlighting
 --local badwhitespace = augroup('Highlight bad whitespacer', { clear = true })
 --autocmd('BufRead,BufNewFile', {
@@ -90,6 +80,7 @@ au FileType asm,nasm,fasm nnoremap <buffer>M :Cgasm<CR>
 ]]
 
 -- Formatter
+-- use vim.lsp.buf.format()
 local formatter = augroup('Auto format code', { clear = true })
 
 autocmd('BufWritePre', {

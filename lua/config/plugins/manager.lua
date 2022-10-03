@@ -90,8 +90,6 @@ return packer.startup(function(use)
   }
   use 'nvim-treesitter/playground'
   use 'p00f/nvim-ts-rainbow'
-  -- Spelling syntax highlight
-  use 'lewis6991/spellsitter.nvim'
   -- Formatter
   use 'vim-autoformat/vim-autoformat'
 
