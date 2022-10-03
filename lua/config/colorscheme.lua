@@ -9,7 +9,7 @@ require('onedark').setup  {
 
   -- toggle theme style ---
   toggle_style_key = '<leader>c', -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-  toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+  toggle_style_list = {'darker', 'cool', 'deep', 'warm', 'warmer', 'light', 'dark'}, -- List of styles to toggle between
 
   -- Change code style ---
   -- Options are italic, bold, underline, none
@@ -34,21 +34,20 @@ require('onedark').setup  {
     LspReferenceText = {bg='$grey'},
     LspReferenceRead = {bg='$grey', fg='$cyan'},
     LspReferenceWrite = {bg='$grey', fg='$yellow'},
-    -- Bad trailing whitespace color
+    -- Bad trailing white space color
     BadWhitespace = {bg='$red'},
     -- Rainbow parentheses
     rainbowcol1 = {fg='$fg'},
-    -- Comments
-    --TSComment = {fg='$dark_red'},
-
+    -- Tree Sitter color tweaks
     TSKeyword = {fg='$red'},
     TSKeywordFunction = {fg='$red'},
-    TSError = {fg='$purple'},
     TSNamespace = {fg='$blue'},
     TSProperty = {fg='$red'},
     TSField = {fg='$red'},
     TSFuncBuiltin = {fg='$blue'},
     TSConstant = {fg='$cyan'},
+    TSConstructor = {fg='$blue', fmt="bold"},
+    TSOperator = {fg='$purple'},
   },
 
   -- Plugins Config --
