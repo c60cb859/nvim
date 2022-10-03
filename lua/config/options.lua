@@ -18,7 +18,6 @@ local options = {
   smartcase = true,
   smartindent = true,
   softtabstop = 2,
-  spell = true,
   splitbelow = true,
   splitright = true,
   swapfile = false,

@@ -24,6 +24,15 @@ autocmd('Filetype', {
   group = whitespaceGroup
 })
 
+-- Turn on spell checking for filetypes
+local spellChecking = augroup('Enable spellchecking', { clear = true })
+
+autocmd('Filetype', {
+  pattern = 'gitcommit,markdown,vimwiki',
+  command = 'setlocal spell',
+  group = spellChecking
+})
+
 -- Bad whitespace highlighting
 --local badwhitespace = augroup('Highlight bad whitespacer', { clear = true })
 --autocmd('BufRead,BufNewFile', {
