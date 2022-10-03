@@ -1,6 +1,6 @@
 require('config.plugins.manager')
 
-require('config.plugins.fzf')
+require('config.plugins.telescope')
 require('config.plugins.gitSigns')
 require('config.plugins.luaLine')
 require('config.plugins.snippet')

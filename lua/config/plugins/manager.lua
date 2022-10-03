@@ -46,6 +46,15 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Lua helper plugin
   use 'nvim-lua/plenary.nvim'
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = {
+      {'nvim-lua/plenary.nvim', opt = false},
+      {'BurntSushi/ripgrep', opt = false},
+      {'nvim-telescope/telescope-fzf-native.nvim', opt = true},
+      {'kyazdani42/nvim-web-devicons', opt = false},
+    }
+  }
   -- Colorschemes
   use 'navarasu/onedark.nvim'
   -- Obsession
@@ -58,7 +67,7 @@ return packer.startup(function(use)
   -- git plugin
   use 'lewis6991/gitsigns.nvim'
   -- Navigation
-  use 'ibhagwan/fzf-lua'
+  --use 'ibhagwan/fzf-lua'
   -- Vim Wiki
   use {'vimwiki/vimwiki', branch = 'dev'}
   -- LSP

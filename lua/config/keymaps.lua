@@ -2,7 +2,8 @@ local opts = { noremap = true, silent = true }
 --local termOpts = { silent = true }
 
 -- Short keymap function
-local keymap = vim.api.nvim_set_keymap
+--local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 -- Remap space as leader key
 keymap("", "<space>", "<nop>", opts)
@@ -31,10 +32,17 @@ keymap("n", "Q", "", opts)
 keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
 -- FZF keymaps
-keymap("n", "<leader>o", "<cmd>lua require('fzf-lua').files()<cr>", opts)
-keymap("n", "<leader>b", "<cmd>lua require('fzf-lua').buffers()<cr>", opts)
-keymap("n", "<leader>p", "<cmd>lua require('fzf-lua').grep_project()<cr>", opts)
-keymap("n", "z=", "<cmd>lua require('fzf-lua').spell_suggest()<cr>", opts)
+--keymap("n", "<leader>o", "<cmd>lua require('fzf-lua').files()<cr>", opts)
+--keymap("n", "<leader>b", "<cmd>lua require('fzf-lua').buffers()<cr>", opts)
+--keymap("n", "<leader>p", "<cmd>lua require('fzf-lua').grep_project()<cr>", opts)
+--keymap("n", "z=", "<cmd>lua require('fzf-lua').spell_suggest()<cr>", opts)
+-- Telescope
+local tsBuiltin = require('telescope.builtin')
+keymap("n", "<leader>ff", tsBuiltin.find_files, opts)
+keymap("n", "<leader>fg", tsBuiltin.live_grep, opts)
+keymap("n", "<leader>fb", tsBuiltin.buffers, opts)
+keymap("n", "<leader>fh", tsBuiltin.help_tags, opts)
+keymap("n", "z=", tsBuiltin.spell_suggest, opts)
 -- Move between split windows
 keymap("n", "<c-j>", "<c-w><c-j>", opts)
 keymap("n", "<c-k>", "<c-w><c-k>", opts)
