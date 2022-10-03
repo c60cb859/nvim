@@ -2,6 +2,7 @@ local options = {
   autoindent = true,
   backup = false,
   clipboard = "unnamedplus",
+  cmdheight = 0,
   cursorline = true,
   expandtab = true,
   fileencoding = "utf-8",
