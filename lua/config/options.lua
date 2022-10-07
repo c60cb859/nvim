@@ -14,6 +14,7 @@ local options = {
   numberwidth = 1,
   relativenumber = true,
   shiftwidth = 2,
+  showtabline = 0,
   signcolumn = "number",
   smartcase = true,
   smartindent = true,
@@ -22,10 +23,8 @@ local options = {
   splitright = true,
   swapfile = false,
   tabstop = 2,
-  --  textwidth = 120,
   undofile = true,
   updatetime = 300,
-  winbar = '%=%m %f',
   wrap = true,
   writebackup = false,
 }

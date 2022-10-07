@@ -44,54 +44,67 @@ packer.init {
 return packer.startup(function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
+
   -- Lua helper plugin
   use 'nvim-lua/plenary.nvim'
+
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = {
       {'nvim-lua/plenary.nvim', opt = false},
-      --      {'BurntSushi/ripgrep', opt = false},
-      {'nvim-telescope/telescope-fzf-native.nvim', opt = true},
       {'kyazdani42/nvim-web-devicons', opt = false},
+      {'nvim-telescope/telescope-fzf-native.nvim', opt = false, run = 'make' }
     }
   }
+
   -- Colorschemes
   use 'navarasu/onedark.nvim'
+
   -- Obsession
   use 'tpope/vim-obsession'
+
   -- lualine
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = false }
   }
+
   -- git plugin
   use 'lewis6991/gitsigns.nvim'
-  -- Navigation
-  --use 'ibhagwan/fzf-lua'
+
   -- Vim Wiki
   use {'vimwiki/vimwiki', branch = 'dev'}
+
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
   -- Auto Completion
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer' -- buffer completions
   use 'hrsh7th/cmp-path' -- path completions
   use 'hrsh7th/cmp-cmdline' -- cmdline completions
   use 'hrsh7th/cmp-nvim-lsp'
+
   -- Lua Completion
   use 'hrsh7th/cmp-nvim-lua'
+
   -- snippets
   use 'L3MON4D3/LuaSnip' --snippet engine
   use 'saadparwaiz1/cmp_luasnip' -- snippet completions
   use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
+
   -- Yocto bitbake syntax
   use 'kergoth/vim-bitbake'
+
   -- Diagrams
   use 'jbyuki/venn.nvim'
+
   -- bufMov
   --use '/home/theis/git/bufMov'
   use 'c60cb859/bufMov.nvim'
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -99,6 +112,7 @@ return packer.startup(function(use)
   }
   use 'nvim-treesitter/playground'
   use 'p00f/nvim-ts-rainbow'
+
   -- Formatter
   use 'vim-autoformat/vim-autoformat'
 
