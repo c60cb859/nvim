@@ -1,9 +1,9 @@
-local status_ok, mason = pcall(require, "mason")
-if not status_ok then
+local status_ma_ok, ma = pcall(require, "mason")
+if not status_ma_ok then
   return
 end
 
-mason.setup {
+ma.setup {
   ui = {
     icons = {
       package_installed = "✓",
@@ -13,7 +13,12 @@ mason.setup {
   }
 }
 
-require("mason-lspconfig").setup {
+local status_malsp_ok, malsp = pcall(require, "mason-lspconfig")
+if not status_malsp_ok then
+  return
+end
+
+malsp.setup {
   ensure_installed = {
     "sumneko_lua", -- requires unzip
     "pyright", -- requires npm
@@ -26,24 +31,16 @@ require("mason-lspconfig").setup {
   },
 }
 
+local lsp_conf = require("lspconfig")
+local lsp_hand = require("config.lsp.handlers")
 
-local lspconfig = require("lspconfig")
-lspconfig.sumneko_lua.setup {
-  on_attach = require("config.lsp.handlers").on_attach,
-  settings = {
-    Lua = {
-      format = {
-        enable = true
-      },
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
-      },
-    }
-  }
+local opts = {
+  on_attach = lsp_hand.on_attach,
+  capabilities = lsp_hand.capabilities,
 }
+
+for _, server in ipairs(malsp.get_installed_servers()) do
+  local server_opts = require("config.lsp.settings."..server)
+  opts = vim.tbl_deep_extend("force", server_opts, opts)
+  lsp_conf[server].setup(opts)
+end
