@@ -53,5 +53,4 @@ lualine.setup({
 	inactive_winbar = {
 		lualine_y = { filename },
 	},
-	extensions = {},
 })
