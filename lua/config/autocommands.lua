@@ -4,14 +4,12 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local filetypeGroup = augroup("Filetype detection", { clear = true })
-
 autocmd("BufRead,BufNewFile", { pattern = "*.asm", command = "set filetype=asm", group = filetypeGroup })
 autocmd("BufRead,BufNewFile", { pattern = "*.nasm", command = "set filetype=nasm", group = filetypeGroup })
 autocmd("BufRead,BufNewFile", { pattern = "*.fasm", command = "set filetype=fasm", group = filetypeGroup })
 autocmd("BufRead,BufNewFile", { pattern = "*.masm", command = "set filetype=masm", group = filetypeGroup })
 
 local whitespaceGroup = augroup("Whitespace settings", { clear = true })
-
 autocmd("Filetype", {
 	pattern = "python",
 	callback = function()
@@ -24,7 +22,6 @@ autocmd("Filetype", {
 
 -- Turn on spell checking for filetypes
 local spellChecking = augroup("Enable spellchecking", { clear = true })
-
 autocmd("Filetype", {
 	pattern = "gitcommit,markdown,vimwiki",
 	command = "setlocal spell",

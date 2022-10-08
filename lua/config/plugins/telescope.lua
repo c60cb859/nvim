@@ -1,45 +1,36 @@
-require("telescope").setup({
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+	vim.notify("Telescope not found!")
+	return
+end
+
+telescope.setup({
 	defaults = {
-		-- Default configuration for telescope goes here:
-		-- config_key = value,
 		sorting_strategy = "ascending",
 		winblend = 20,
 		prompt_prefix = " ",
 		selection_prefix = "",
-		mappings = {
-			i = {
-				-- map actions.which_key to <C-h> (default: <C-/>)
-				-- actions.which_key shows the mappings for your picker,
-				-- e.g. git_{create, delete, ...}_branch for the git_branches picker
-				--["<C-h>"] = "which_key"
-			},
-		},
-	},
-	pickers = {
-		-- Default configuration for builtin pickers goes here:
-		-- picker_name = {
-		--   picker_config_key = value,
-		--   ...
-		-- }
-		-- Now the picker_config_key will be applied every time you call this
-		-- builtin picker
 	},
 	extensions = {
-		-- Your extension configuration goes here:
-		-- extension_name = {
-		--   extension_config_key = value,
-		-- }
-		-- please take a look at the readme of the extension you want to configure
 		fzf = {
-			fuzzy = true, -- false will only do exact matching
-			override_generic_sorter = true, -- override the generic sorter
-			override_file_sorter = true, -- override the file sorter
-			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			-- the default case_mode is "smart_case"
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
 		},
 	},
 })
 
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-require("telescope").load_extension("fzf")
+-- Load fzf extensions
+telescope.load_extension("fzf")
+
+-- Telescope keymap
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
+local tsBuiltin = require("telescope.builtin")
+
+keymap("n", "<leader>ff", tsBuiltin.find_files, opts)
+keymap("n", "<leader>fg", tsBuiltin.live_grep, opts)
+keymap("n", "<leader>fb", tsBuiltin.buffers, opts)
+keymap("n", "<leader>fh", tsBuiltin.help_tags, opts)
+keymap("n", "z=", tsBuiltin.spell_suggest, opts)

@@ -1,5 +1,6 @@
 local status_ma_ok, ma = pcall(require, "mason")
 if not status_ma_ok then
+	vim.notify("Mason not found!")
 	return
 end
 
@@ -15,6 +16,7 @@ ma.setup({
 
 local status_malsp_ok, malsp = pcall(require, "mason-lspconfig")
 if not status_malsp_ok then
+	vim.notify("Mason-lsp not found!")
 	return
 end
 

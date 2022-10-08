@@ -2,7 +2,6 @@ local opts = { noremap = true, silent = true }
 --local termOpts = { silent = true }
 
 -- Short keymap function
---local keymap = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
 
 -- Remap space as leader key
@@ -32,14 +31,6 @@ keymap("n", "Q", "", opts)
 -- Quite, save and open shotcuts
 keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
-
--- Telescope
-local tsBuiltin = require("telescope.builtin")
-keymap("n", "<leader>ff", tsBuiltin.find_files, opts)
-keymap("n", "<leader>fg", tsBuiltin.live_grep, opts)
-keymap("n", "<leader>fb", tsBuiltin.buffers, opts)
-keymap("n", "<leader>fh", tsBuiltin.help_tags, opts)
-keymap("n", "z=", tsBuiltin.spell_suggest, opts)
 
 -- Move between split windows
 keymap("n", "<c-j>", "<c-w><c-j>", opts)
