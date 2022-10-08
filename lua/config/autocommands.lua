@@ -3,34 +3,32 @@ local buf = vim.bo
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
+local filetypeGroup = augroup("Filetype detection", { clear = true })
 
-local filetypeGroup = augroup('Filetype detection', { clear = true })
+autocmd("BufRead,BufNewFile", { pattern = "*.asm", command = "set filetype=asm", group = filetypeGroup })
+autocmd("BufRead,BufNewFile", { pattern = "*.nasm", command = "set filetype=nasm", group = filetypeGroup })
+autocmd("BufRead,BufNewFile", { pattern = "*.fasm", command = "set filetype=fasm", group = filetypeGroup })
+autocmd("BufRead,BufNewFile", { pattern = "*.masm", command = "set filetype=masm", group = filetypeGroup })
 
-autocmd('BufRead,BufNewFile', { pattern = '*.asm', command = 'set filetype=asm', group = filetypeGroup })
-autocmd('BufRead,BufNewFile', { pattern = '*.nasm', command = 'set filetype=nasm', group = filetypeGroup })
-autocmd('BufRead,BufNewFile', { pattern = '*.fasm', command = 'set filetype=fasm', group = filetypeGroup })
-autocmd('BufRead,BufNewFile', { pattern = '*.masm', command = 'set filetype=masm', group = filetypeGroup })
+local whitespaceGroup = augroup("Whitespace settings", { clear = true })
 
-
-local whitespaceGroup = augroup('Whitespace settings', { clear = true })
-
-autocmd('Filetype', {
-  pattern = 'python',
-  callback = function()
-    buf.tabstop = 4
-    buf.softtabstop = 4
-    buf.shiftwidth = 4
-  end,
-  group = whitespaceGroup
+autocmd("Filetype", {
+	pattern = "python",
+	callback = function()
+		buf.tabstop = 4
+		buf.softtabstop = 4
+		buf.shiftwidth = 4
+	end,
+	group = whitespaceGroup,
 })
 
 -- Turn on spell checking for filetypes
-local spellChecking = augroup('Enable spellchecking', { clear = true })
+local spellChecking = augroup("Enable spellchecking", { clear = true })
 
-autocmd('Filetype', {
-  pattern = 'gitcommit,markdown,vimwiki',
-  command = 'setlocal spell',
-  group = spellChecking
+autocmd("Filetype", {
+	pattern = "gitcommit,markdown,vimwiki",
+	command = "setlocal spell",
+	group = spellChecking,
 })
 
 -- Bad whitespace highlighting
@@ -42,7 +40,7 @@ autocmd('Filetype', {
 --    group = badwhitespace
 --  })
 
-vim.cmd [[
+vim.cmd([[
 augroup badwhitespace
 autocmd!
 " Flagging Unnecessary Whitespace
@@ -50,18 +48,18 @@ autocmd BufRead,BufNewFile * match BadWhitespace /\s\+$/
 " au BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h,*.hpp match BadWhitespace /^\t\+/
 autocmd Filetype python,cpp,c,cmake match BadWhitespace /^\t\+/
 augroup end
-]]
+]])
 
 -- Auto insert mode when switching to terminal
-vim.cmd [[
+vim.cmd([[
 augroup terminalSettings
 autocmd!
 autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
 augroup end
-]]
+]])
 
 -- C++ man pages
-vim.cmd [[
+vim.cmd([[
 function! s:CppMan()
 let old_isk = &iskeyword
 setl iskeyword+=:
@@ -72,10 +70,10 @@ endfunction
 command! CppMan :call s:CppMan()
 
 au FileType cpp nnoremap <buffer>M :CppMan<CR>
-]]
+]])
 
 -- cgasm
-vim.cmd [[
+vim.cmd([[
 function! s:Cgasm()
 let old_isk = &iskeyword
 setl iskeyword+=:
@@ -86,14 +84,14 @@ endfunction
 command! Cgasm :call s:Cgasm()
 
 au FileType asm,nasm,fasm nnoremap <buffer>M :Cgasm<CR>
-]]
+]])
 
 -- Formatter
 -- use vim.lsp.buf.format()
-local formatter = augroup('Auto format code', { clear = true })
+local formatter = augroup("Auto format code", { clear = true })
 
-autocmd('BufWritePre', {
-  pattern = '*.rs,*.lua',
-  command = 'Autoformat',
-  group = formatter
+autocmd("BufWritePre", {
+	pattern = "*.rs,*.lua",
+	command = "Autoformat",
+	group = formatter,
 })
