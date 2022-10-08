@@ -99,9 +99,6 @@ return packer.startup(function(use)
 	-- Yocto bitbake syntax
 	use("kergoth/vim-bitbake")
 
-	-- Diagrams
-	use("jbyuki/venn.nvim")
-
 	-- bufMov
 	--use '/home/theis/git/bufMov'
 	use("c60cb859/bufMov.nvim")
