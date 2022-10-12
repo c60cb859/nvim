@@ -81,14 +81,22 @@ return packer.startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 
+	-- DAP
+	--use("mfussenegger/nvim-dap")
+	--use({
+	--	"rcarriga/nvim-dap-ui",
+	--	requires = { "mfussenegger/nvim-dap" },
+	--})
+
 	-- Auto Completion
 	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-nvim-lsp-document-symbol")
 
-	-- Lua Completion
+	-- Lua Completion for neovim API
 	use("hrsh7th/cmp-nvim-lua")
 
 	-- snippets
@@ -107,9 +115,11 @@ return packer.startup(function(use)
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
+		requires = {
+			{ "nvim-treesitter/playground", opt = true },
+			{ "p00f/nvim-ts-rainbow", opt = true },
+		},
 	})
-	use("nvim-treesitter/playground")
-	use("p00f/nvim-ts-rainbow")
 
 	-- Formatter
 	use("vim-autoformat/vim-autoformat")
