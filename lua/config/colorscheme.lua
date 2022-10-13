@@ -28,6 +28,8 @@ onedark.setup({
 		TSConstant = { fg = "$cyan" },
 		TSConstructor = { fg = "$blue", fmt = "bold" },
 		TSOperator = { fg = "$purple" },
+		-- cmp
+		CmpItemMenu = { fg = "$grey" },
 	},
 })
 

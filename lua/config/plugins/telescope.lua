@@ -30,7 +30,8 @@ local keymap = vim.keymap.set
 local tsBuiltin = require("telescope.builtin")
 
 keymap("n", "<leader>ff", tsBuiltin.find_files, opts)
-keymap("n", "<leader>fg", tsBuiltin.live_grep, opts)
+--keymap("n", "<leader>fg", tsBuiltin.live_grep, opts)
+keymap("n", "<leader>fg", ':Telescope grep_string search=""<CR>', opts)
 keymap("n", "<leader>fb", tsBuiltin.buffers, opts)
 keymap("n", "<leader>fh", tsBuiltin.help_tags, opts)
 keymap("n", "z=", tsBuiltin.spell_suggest, opts)

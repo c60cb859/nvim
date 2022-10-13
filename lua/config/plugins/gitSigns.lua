@@ -38,6 +38,7 @@ gitsigns.setup({
 		delay = 1500,
 		ignore_whitespace = false,
 	},
+	current_line_blame_formatter = "<author>, <author_time> [<abbrev_sha>]",
 	current_line_blame_formatter_opts = {
 		relative_time = true,
 	},

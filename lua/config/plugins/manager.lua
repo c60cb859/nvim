@@ -95,6 +95,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lsp-document-symbol")
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
 
 	-- Lua Completion for neovim API
 	use("hrsh7th/cmp-nvim-lua")
