@@ -11,21 +11,21 @@ autocmd("BufRead,BufNewFile", { pattern = "*.masm", command = "set filetype=masm
 
 local whitespaceGroup = augroup("Whitespace settings", { clear = true })
 autocmd("Filetype", {
-	pattern = "python",
-	callback = function()
-		buf.tabstop = 4
-		buf.softtabstop = 4
-		buf.shiftwidth = 4
-	end,
-	group = whitespaceGroup,
+    pattern = "python",
+    callback = function()
+        buf.tabstop = 4
+        buf.softtabstop = 4
+        buf.shiftwidth = 4
+    end,
+    group = whitespaceGroup,
 })
 
 -- Turn on spell checking for filetypes
 local spellChecking = augroup("Enable spellchecking", { clear = true })
 autocmd("Filetype", {
-	pattern = "gitcommit,markdown,vimwiki",
-	command = "setlocal spell",
-	group = spellChecking,
+    pattern = "gitcommit,markdown,vimwiki",
+    command = "setlocal spell",
+    group = spellChecking,
 })
 
 -- Bad whitespace highlighting
@@ -82,13 +82,3 @@ command! Cgasm :call s:Cgasm()
 
 au FileType asm,nasm,fasm nnoremap <buffer>M :Cgasm<CR>
 ]])
-
--- Formatter
--- use vim.lsp.buf.format()
-local formatter = augroup("Auto format code", { clear = true })
-
-autocmd("BufWritePre", {
-	pattern = "*.rs,*.lua",
-	command = "Autoformat",
-	group = formatter,
-})

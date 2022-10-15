@@ -51,8 +51,8 @@ keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar
 keymap("n", "<leader>ss", ":ClangdSwitchSourceHeader<cr>", opts)
 
 -- Insert mode --
--- Remap insert exit to jk
-keymap("i", "jk", "<esc>", opts)
+-- Remap insert exit to uu
+keymap("i", "uu", "<esc>", opts)
 keymap("i", "<esc>", "<nop>", opts)
 
 -- Visual mode --
