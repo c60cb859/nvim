@@ -80,6 +80,7 @@ return packer.startup(function(use)
     use("neovim/nvim-lspconfig")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
+    use("folke/trouble.nvim")
 
     -- DAP
     --use("mfussenegger/nvim-dap")
