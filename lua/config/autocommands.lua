@@ -82,3 +82,21 @@ command! Cgasm :call s:Cgasm()
 
 au FileType asm,nasm,fasm nnoremap <buffer>M :Cgasm<CR>
 ]])
+
+local test = function()
+    local win = vim.api.nvim_get_current_win() -- save where we are now
+    local bufnr = vim.api.nvim_get_current_buf()
+    local params = vim.lsp.util.make_position_params() -- create params for "go to definition"
+    local method = "textDocument/typeDefinition"
+    local lsp_response = vim.lsp.buf_request_sync(bufnr, method, params, 1000) -- call the LSP(s)
+    local result = {}
+    for _, client in pairs(lsp_response) do -- loop over all LSPs
+        for _, r in pairs(client.result) do -- loop over all results per LSP
+            table.insert(result, r) -- put them in a table
+        end
+    end
+    vim.lsp.handlers[method](nil, result, method) -- call the handler
+    print(vim.inspect(result))
+end
+
+vim.api.nvim_create_user_command("TestLSP", test, {})
