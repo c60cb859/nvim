@@ -1,12 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local filetypeGroup = augroup("Filetype detection", { clear = true })
-autocmd("BufRead,BufNewFile", { pattern = "*.asm", command = "set filetype=asm", group = filetypeGroup })
-autocmd("BufRead,BufNewFile", { pattern = "*.nasm", command = "set filetype=nasm", group = filetypeGroup })
-autocmd("BufRead,BufNewFile", { pattern = "*.fasm", command = "set filetype=fasm", group = filetypeGroup })
-autocmd("BufRead,BufNewFile", { pattern = "*.masm", command = "set filetype=masm", group = filetypeGroup })
-
 -- Turn on spell checking for filetypes
 local spellChecking = augroup("Enable spellchecking", { clear = true })
 autocmd("Filetype", {
@@ -16,25 +10,20 @@ autocmd("Filetype", {
 })
 
 -- Auto insert mode when switching to terminal
+--[[
+local terminalSettings = augroup("Auto insert mode in terminal", { clear = true })
+
+autocmd("BufEnter", {
+	pattern = "",
+	command = "startinsert",
+	group = terminalSettings,
+})
+--]]
 vim.cmd([[
 augroup terminalSettings
 autocmd!
 autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
 augroup end
-]])
-
--- cgasm
-vim.cmd([[
-function! s:Cgasm()
-let old_isk = &iskeyword
-setl iskeyword+=:
-let str = expand("<cword>")
-let &l:iskeyword = old_isk
-execute '!cgasm ' . str
-endfunction
-command! Cgasm :call s:Cgasm()
-
-au FileType asm,nasm,fasm nnoremap <buffer>M :Cgasm<CR>
 ]])
 
 --local test = function()
