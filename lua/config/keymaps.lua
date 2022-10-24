@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
---local termOpts = { silent = true }
+local termOpts = { silent = true }
 
 -- Short keymap function
 local keymap = vim.keymap.set
@@ -33,10 +33,10 @@ keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
 
 -- Move between split windows
-keymap("n", "<c-j>", "<c-w><c-j>", opts)
-keymap("n", "<c-k>", "<c-w><c-k>", opts)
-keymap("n", "<c-l>", "<c-w><c-l>", opts)
-keymap("n", "<c-h>", "<c-w><c-h>", opts)
+keymap("n", "<localleader>j", "<c-w><c-j>", opts)
+keymap("n", "<localleader>k", "<c-w><c-k>", opts)
+keymap("n", "<localleader>l", "<c-w><c-l>", opts)
+keymap("n", "<localleader>h", "<c-w><c-h>", opts)
 
 -- BufMov
 keymap("n", "<leader>j", ":MoveBufferDown<cr>", opts)
@@ -47,13 +47,7 @@ keymap("n", "<leader>h", ":MoveBufferLeft<cr>", opts)
 -- Remove bad whitespaces
 keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>", opts)
 
--- C/C++ switch between header and source keymap
-keymap("n", "<leader>ss", ":ClangdSwitchSourceHeader<cr>", opts)
-
 -- Insert mode --
--- Remap insert exit to uu
-keymap("i", "uu", "<esc>", opts)
-keymap("i", "<esc>", "<nop>", opts)
 
 -- Visual mode --
 -- Stay in indent mode
@@ -68,5 +62,4 @@ keymap("v", "J", ":move '>+1<cr>gv-gv", opts)
 keymap("v", "K", ":move '<-2<cr>gv-gv", opts)
 
 -- Terminal mode --
--- Remap terminal exit to jk
---keymap("t", "<esc>", "<c-\\><c-n>", termOpts)
+keymap("t", "<esc>", "<c-\\><c-n>", termOpts)

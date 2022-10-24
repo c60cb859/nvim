@@ -1,24 +1,24 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-    vim.notify("Telescope not found!")
-    return
+	vim.notify("Telescope not found!")
+	return
 end
 
 telescope.setup({
-    defaults = {
-        sorting_strategy = "ascending",
-        winblend = 20,
-        prompt_prefix = " ",
-        selection_prefix = "",
-    },
-    extensions = {
-        fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-        },
-    },
+	defaults = {
+		sorting_strategy = "ascending",
+		winblend = 20,
+		prompt_prefix = " ",
+		selection_prefix = "",
+	},
+	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
+	},
 })
 
 -- Load fzf extensions
