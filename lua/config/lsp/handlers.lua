@@ -15,8 +15,8 @@ local function lsp_keymaps(bufnr)
 	keymap("n", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 
 	keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	keymap("n", "<leader>ln", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	keymap("n", "<leader>lN", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+	keymap("n", "<leader>ln", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+	keymap("n", "<leader>lN", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 

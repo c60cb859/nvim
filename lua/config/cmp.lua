@@ -38,7 +38,7 @@ local mapping = {
 		i = cmp.mapping.abort(),
 		c = cmp.mapping.close(),
 	}),
-	["<cr>"] = cmp.mapping.confirm({ select = false }),
+	["<cr>"] = cmp.mapping.confirm({ select = true }),
 }
 
 local kind_icons = {
@@ -84,7 +84,7 @@ local format = function(entry, vim_item)
 end
 
 -- Sources
-local lsp = { name = "nvim_lsp", keyword_length = 4, max_item_count = 5 }
+local lsp = { name = "nvim_lsp", keyword_length = 4, max_item_count = 10 }
 local lua = { name = "nvim_lua", keyword_length = 4, max_item_count = 5 }
 local snip = { name = "luasnip", keyword_length = 4, max_item_count = 5 }
 
