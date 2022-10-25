@@ -33,34 +33,7 @@ local line = {
 	lualine_z = { "location" },
 }
 
-local filename = {
-	"filename",
-	path = 1,
-	symbols = {
-		modified = "",
-		readonly = "",
-		unnamed = "",
-		newfile = "ﱐ",
-	},
-}
-
 lualine.setup({
 	options = options,
 	sections = line,
-	winbar = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = { filename },
-		lualine_z = {},
-	},
-	inactive_winbar = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = { filename },
-	},
 })

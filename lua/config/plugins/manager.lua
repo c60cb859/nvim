@@ -69,9 +69,18 @@ return packer.startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = false },
 	})
+	-- Incline
+	use("b0o/incline.nvim")
 
 	-- git plugin
 	use("lewis6991/gitsigns.nvim")
+	use({
+		"TimUntersberger/neogit",
+		requires = {
+			{ "sindrets/diffview.nvim", opt = false },
+			{ "nvim-lua/plenary.nvim", opt = false },
+		},
+	})
 
 	-- Vim Wiki
 	use({ "vimwiki/vimwiki", branch = "dev" })
@@ -104,6 +113,9 @@ return packer.startup(function(use)
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+
+	-- Boole
+	use("nat-418/boole.nvim")
 
 	-- Yocto bitbake syntax
 	use("kergoth/vim-bitbake")
