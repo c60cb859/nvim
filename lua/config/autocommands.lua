@@ -9,22 +9,14 @@ autocmd("Filetype", {
 	group = spellChecking,
 })
 
--- Auto insert mode when switching to terminal
---[[
-local terminalSettings = augroup("Auto insert mode in terminal", { clear = true })
-
-autocmd("BufEnter", {
-	pattern = "",
-	command = "startinsert",
-	group = terminalSettings,
+local quickfix = augroup("QuichFix settings", { clear = true })
+autocmd("Filetype", {
+	pattern = "qf",
+	callback = function()
+		vim.wo.wrap = false
+	end,
+	group = quickfix,
 })
---]]
-vim.cmd([[
-augroup terminalSettings
-autocmd!
-autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
-augroup end
-]])
 
 --local test = function()
 --    local win = vim.api.nvim_get_current_win() -- save where we are now
