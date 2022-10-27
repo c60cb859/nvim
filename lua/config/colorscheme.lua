@@ -31,6 +31,19 @@ onedark.setup({
 		TreesitterContextLineNumber = { fg = "$purple" },
 		-- cmp
 		CmpItemMenu = { fg = "$grey" },
+		-- Diff
+		DiffAdd = { fg = "$green", bg = "$bg1", fmt = "bold" },
+		DiffDelete = { fg = "$red", bg = "$bg1", fmt = "italic" },
+		-- neogit
+		NeogitNotificationInfo = { fg = "$green" },
+		NeogitNotificationWarning = { fg = "$yellow" },
+		NeogitNotificationError = { fg = "$red" },
+
+		NeogitDiffAddHighlight = { fg = "$green", bg = "$bg1", fmt = "bold" },
+		NeogitDiffDeleteHighlight = { fg = "$red", bg = "$bg1", fmt = "italic" },
+		NeogitDiffContextHighlight = { fg = "$none", bg = "$bg0" },
+		NeogitHunkHeader = { fg = "$blue", bg = "$bg1" },
+		NeogitHunkHeaderHighlight = { fg = "$purple", bg = "$bg1" },
 	},
 })
 

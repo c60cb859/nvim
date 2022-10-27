@@ -11,13 +11,13 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
 
 -- Modes
---   all         = "",
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c"
+--	all					= "",
+--	normal_mode			= "n",
+--	insert_mode			= "i",
+--	visual_mode			= "v",
+--	visual_block_mode	= "x",
+--	term_mode			= "t",
+--	command_mode		= "c"
 
 -- All modes --
 -- Visual-line navigation, nice when lines a wrapped
@@ -37,6 +37,10 @@ keymap("n", "<localleader>j", "<c-w><c-j>", opts)
 keymap("n", "<localleader>k", "<c-w><c-k>", opts)
 keymap("n", "<localleader>l", "<c-w><c-l>", opts)
 keymap("n", "<localleader>h", "<c-w><c-h>", opts)
+
+-- QuickFix movements
+keymap("n", "C>", ":cnext<cr>", opts)
+keymap("n", "C<", ":cNext<cr>", opts)
 
 -- BufMov
 keymap("n", "<leader>j", ":MoveBufferDown<cr>", opts)

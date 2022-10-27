@@ -1,6 +1,6 @@
 local listchars = {
 	eol = "",
-	tab = "⟼ ",
+	tab = "⊦ ",
 	multispace = "␣",
 	lead = " ",
 	trail = "",
@@ -20,6 +20,7 @@ local options = {
 	laststatus = 3,
 	list = true,
 	listchars = listchars,
+	matchpairs = "(:),{:},[:],<:>",
 	number = true,
 	numberwidth = 1,
 	relativenumber = true,
