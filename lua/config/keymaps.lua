@@ -6,9 +6,9 @@ local keymap = vim.keymap.set
 
 -- Remap space as leader key
 keymap("", "<space>", "<nop>", opts)
-keymap("", ";", "<nop>", opts)
+keymap("", "<bs>", "<nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = ";"
+vim.g.maplocalleader = vim.api.nvim_replace_termcodes("<bs>", true, false, true)
 
 -- Modes
 --	all					= "",
@@ -52,6 +52,7 @@ keymap("n", "<leader>h", ":MoveBufferLeft<cr>", opts)
 keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>", opts)
 
 -- Insert mode --
+keymap("i", "<c-c>", "<esc>", opts)
 
 -- Visual mode --
 -- Stay in indent mode

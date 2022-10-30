@@ -11,9 +11,9 @@ onedark.setup({
 
 	highlights = {
 		-- LSP document highlights
-		LspReferenceText = { bg = "$grey" },
-		LspReferenceRead = { bg = "$grey", fg = "$cyan" },
-		LspReferenceWrite = { bg = "$grey", fg = "$yellow" },
+		LspReferenceText = { bg = "$bg1", fg = "$blue", fmt = "bold,underline" },
+		LspReferenceRead = { bg = "$bg1", fg = "$cyan", fmt = "bold,underline" },
+		LspReferenceWrite = { bg = "$bg1", fg = "$yellow", fmt = "bold,underline" },
 		-- Rainbow parentheses
 		rainbowcol1 = { fg = "$fg" },
 		-- Tree Sitter color tweaks
@@ -44,6 +44,14 @@ onedark.setup({
 		NeogitDiffContextHighlight = { fg = "$none", bg = "$bg0" },
 		NeogitHunkHeader = { fg = "$blue", bg = "$bg1" },
 		NeogitHunkHeaderHighlight = { fg = "$purple", bg = "$bg1" },
+		-- nvim search
+		IncSearch = { bg = "$blue", fg = "$bg0" },
+		--CurSearch = { bg = "$blue", fg = "$bg0" }, this becomer very laggy
+		Search = { bg = "$yellow", fg = "$bg0" },
+		-- parentheses match
+		MatchParen = { bg = "$grey", fg = "$cyan", fmt = "bold,underline" },
+		-- Spelling
+		SpellBad = { fg = "$none", fmt = "underline,italic" },
 	},
 })
 

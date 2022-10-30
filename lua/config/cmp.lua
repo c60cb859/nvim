@@ -34,11 +34,11 @@ local mapping = {
 	["<c-p>"] = cmp.mapping(move_backward, { "i", "s" }),
 	["<c-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 	["<c-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-	["<c-c>"] = cmp.mapping({
+	["<c-q>"] = cmp.mapping({
 		i = cmp.mapping.abort(),
 		c = cmp.mapping.close(),
 	}),
-	["<cr>"] = cmp.mapping.confirm({ select = true }),
+	["<cr>"] = cmp.mapping.confirm({ select = false }),
 }
 
 local kind_icons = {
