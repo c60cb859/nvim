@@ -4,7 +4,7 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Turn on spell checking for filetypes
 local spellChecking = augroup("Enable spellchecking", { clear = true })
 autocmd("Filetype", {
-	pattern = "gitcommit,markdown,vimwiki",
+	pattern = "gitcommit,markdown,vimwiki,NeogitCommitMessage",
 	command = "setlocal spell",
 	group = spellChecking,
 })
