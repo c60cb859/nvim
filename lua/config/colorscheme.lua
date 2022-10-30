@@ -11,9 +11,9 @@ onedark.setup({
 
 	highlights = {
 		-- LSP document highlights
-		LspReferenceText = { bg = "$bg1", fg = "$blue", fmt = "bold,underline" },
-		LspReferenceRead = { bg = "$bg1", fg = "$cyan", fmt = "bold,underline" },
-		LspReferenceWrite = { bg = "$bg1", fg = "$yellow", fmt = "bold,underline" },
+		LspReferenceText = { bg = "$bg1", fg = "$blue", fmt = "bold" },
+		LspReferenceRead = { bg = "$bg1", fg = "$cyan", fmt = "bold" },
+		LspReferenceWrite = { bg = "$bg1", fg = "$yellow", fmt = "bold" },
 		-- Rainbow parentheses
 		rainbowcol1 = { fg = "$fg" },
 		-- Tree Sitter color tweaks
