@@ -14,5 +14,8 @@ local render = function(props)
 end
 
 incline.setup({
+	hide = {
+		cursorline = true,
+	},
 	render = render,
 })
