@@ -92,11 +92,11 @@ return packer.startup(function(use)
 	use("folke/trouble.nvim")
 
 	-- DAP
-	--use("mfussenegger/nvim-dap")
-	--use({
-	--	"rcarriga/nvim-dap-ui",
-	--	requires = { "mfussenegger/nvim-dap" },
-	--})
+	use("mfussenegger/nvim-dap")
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+	})
 
 	-- Auto Completion
 	use("hrsh7th/nvim-cmp")

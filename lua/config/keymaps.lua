@@ -53,7 +53,6 @@ keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar
 
 -- Insert mode --
 keymap("i", "<c-c>", "<esc>", opts)
-keymap("i", "<leader><cr>", "<esc>o", opts)
 
 -- Visual mode --
 -- Stay in indent mode
