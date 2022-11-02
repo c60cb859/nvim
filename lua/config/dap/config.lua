@@ -33,6 +33,13 @@ dap.configurations.cpp = {
 		stopOnEntry = false,
 		args = {},
 		runInTerminal = false,
+		env = function()
+			local variables = {}
+			for k, v in pairs(vim.fn.environ()) do
+				table.insert(variables, string.format("%s=%s", k, v))
+			end
+			return variables
+		end,
 	},
 }
 

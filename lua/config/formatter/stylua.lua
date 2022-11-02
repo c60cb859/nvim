@@ -1,7 +1,7 @@
 local stylua = require("null-ls.builtins.formatting.stylua")
 
 local source = stylua.with({
-	conditions = function(utils)
+	condition = function(utils)
 		return utils.root_has_file({ "stylua.toml", ".stylua.toml" })
 	end,
 })
