@@ -4,6 +4,10 @@ if not status_ok then
 	return
 end
 
+vim.keymap.set("n", "<localleader>g", function()
+	dapui.toggle()
+end, { noremap = true, silent = true })
+
 dapui.setup({
 	icons = { expanded = "▾", collapsed = "▸", current_frame = "▸" },
 	mappings = {
@@ -42,7 +46,7 @@ dapui.setup({
 				"stacks",
 				"watches",
 			},
-			size = 40, -- 40 columns
+			size = 0.25, -- 40 columns
 			position = "left",
 		},
 		{
@@ -55,20 +59,7 @@ dapui.setup({
 		},
 	},
 	controls = {
-		-- Requires Neovim nightly (or 0.8 when released)
-		enabled = true,
-		-- Display controls in this element
-		element = "repl",
-		icons = {
-			pause = "",
-			play = "",
-			step_into = "",
-			step_over = "",
-			step_out = "",
-			step_back = "",
-			run_last = "↻",
-			terminate = "□",
-		},
+		enabled = false,
 	},
 	floating = {
 		max_height = nil, -- These can be integers or a float between 0 and 1.

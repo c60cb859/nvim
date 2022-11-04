@@ -132,6 +132,7 @@ return packer.startup(function(use)
 			{ "nvim-treesitter/playground", opt = false },
 			{ "nvim-treesitter/nvim-treesitter-context", opt = false },
 			{ "p00f/nvim-ts-rainbow", opt = false },
+			{ "folke/twilight.nvim", opt = false },
 		},
 	})
 
