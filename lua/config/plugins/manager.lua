@@ -133,6 +133,7 @@ return packer.startup(function(use)
 			{ "nvim-treesitter/nvim-treesitter-context", opt = false },
 			{ "p00f/nvim-ts-rainbow", opt = false },
 			{ "folke/twilight.nvim", opt = false },
+			{ "numToStr/Comment.nvim", opt = false },
 		},
 	})
 

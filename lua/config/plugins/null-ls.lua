@@ -30,6 +30,8 @@ null_ls.setup({
 -- Formatters
 null_ls.register(require("config.formatter.stylua"))
 null_ls.register(require("config.formatter.clang_format"))
+null_ls.register(require("config.formatter.black"))
 
 -- diagnostics
 null_ls.register(require("config.linter.selene"))
+null_ls.register(require("config.linter.flake8"))

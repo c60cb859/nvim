@@ -25,4 +25,8 @@ twilight.setup({
 		"method",
 		"table",
 	},
+	exclude = {
+		"cmake",
+	},
+	global = false,
 })
