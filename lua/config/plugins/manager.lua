@@ -117,6 +117,14 @@ return packer.startup(function(use)
 	-- Boole
 	use("nat-418/boole.nvim")
 
+	-- autopairs
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
+
 	-- Yocto bitbake syntax
 	use("kergoth/vim-bitbake")
 
