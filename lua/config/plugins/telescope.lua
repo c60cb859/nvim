@@ -18,11 +18,15 @@ telescope.setup({
 			override_file_sorter = true,
 			case_mode = "smart_case",
 		},
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown(),
+		},
 	},
 })
 
 -- Load fzf extensions
 telescope.load_extension("fzf")
+telescope.load_extension("ui-select")
 
 -- Telescope keymap
 local opts = { noremap = true, silent = true }

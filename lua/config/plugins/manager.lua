@@ -55,6 +55,7 @@ return packer.startup(function(use)
 			{ "nvim-lua/plenary.nvim", opt = false },
 			{ "kyazdani42/nvim-web-devicons", opt = false },
 			{ "nvim-telescope/telescope-fzf-native.nvim", opt = false, run = "make" },
+			{ "nvim-telescope/telescope-ui-select.nvim", opt = false },
 		},
 	})
 
@@ -118,12 +119,10 @@ return packer.startup(function(use)
 	use("nat-418/boole.nvim")
 
 	-- autopairs
-	use({
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	})
+	use("windwp/nvim-autopairs")
+
+	-- indent line
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Yocto bitbake syntax
 	use("kergoth/vim-bitbake")
@@ -141,6 +140,7 @@ return packer.startup(function(use)
 			{ "nvim-treesitter/nvim-treesitter-context", opt = false },
 			{ "p00f/nvim-ts-rainbow", opt = false },
 			{ "folke/twilight.nvim", opt = false },
+			-- { "/home/theis/git/twilight.nvim", opt = false },
 			{ "numToStr/Comment.nvim", opt = false },
 		},
 	})

@@ -17,6 +17,7 @@ twilight.setup({
 	context = 10,
 	treesitter = true,
 	expand = {
+		"class_specifier ",
 		"if_statement",
 		"for_statement",
 		"method_definition",

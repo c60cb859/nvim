@@ -52,6 +52,8 @@ onedark.setup({
 		MatchParen = { bg = "$grey", fg = "$cyan", fmt = "bold,underline" },
 		-- Spelling
 		SpellBad = { fg = "$none", fmt = "underline,italic" },
+		-- Indent blankline
+		IndentBlanklineChar = { fg = "$bg2" },
 	},
 })
 
