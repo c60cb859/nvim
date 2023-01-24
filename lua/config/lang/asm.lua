@@ -31,7 +31,7 @@ autocmd("BufRead,BufNewFile", { pattern = "*.masm", command = "set filetype=masm
 local asmGroup = augroup("Assembly specific settings", { clear = true })
 
 autocmd("FileType", {
-	pattern = "asm,nasm,fasm,masm",
+	pattern = "asm,nasm,fasm,masm,rizin",
 	callback = function()
 		for key, value in pairs(bufferOptions) do
 			vim.bo[key] = value
