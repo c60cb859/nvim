@@ -25,7 +25,7 @@ require("vim.lsp.log").set_level("OFF")
 
 malsp.setup({
 	ensure_installed = {
-		"sumneko_lua", -- requires unzip
+		"lua_ls", -- requires unzip
 		"pyright", -- requires npm
 		"cmake",
 		"clangd",

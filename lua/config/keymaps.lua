@@ -32,15 +32,13 @@ keymap("n", "Q", "", opts)
 keymap("n", "<c-q>", ":q<cr>", opts)
 keymap("n", "<c-s>", ":w<cr>", opts)
 
--- Move between split windows
-keymap("n", "<localleader>j", "<c-w><c-j>", opts)
-keymap("n", "<localleader>k", "<c-w><c-k>", opts)
-keymap("n", "<localleader>l", "<c-w><c-l>", opts)
-keymap("n", "<localleader>h", "<c-w><c-h>", opts)
-
 -- QuickFix movements
 keymap("n", "C>", ":cnext<cr>", opts)
 keymap("n", "C<", ":cNext<cr>", opts)
+
+-- Center after half page jump
+keymap("n", "<c-d>", "<c-d>zz", opts)
+keymap("n", "<c-u>", "<c-u>zz", opts)
 
 -- BufMov
 keymap("n", "<leader>j", ":MoveBufferDown<cr>", opts)

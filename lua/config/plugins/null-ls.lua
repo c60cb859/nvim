@@ -33,6 +33,7 @@ null_ls.register(require("config.formatter.clang_format"))
 null_ls.register(require("config.formatter.black"))
 null_ls.register(require("config.formatter.rustfmt"))
 null_ls.register(require("config.formatter.prettier"))
+null_ls.register(require("config.formatter.beautysh"))
 
 -- diagnostics
 null_ls.register(require("config.linter.selene"))

@@ -19,7 +19,12 @@ local bufferOptions = {
 }
 
 local setKeymaps = function()
-	keymap("n", "M", ":Cgasm<cr>", opts)
+	--keymap("n", "M", ":Cgasm<cr>", opts)
+	keymap("n", "M", function()
+		local keyword = vim.fn.expand("<cword>")
+		local cmd = "cgasm " .. keyword
+		require("whid").float_cmd(cmd)
+	end, opts)
 end
 
 local filetypeGroup = augroup("Filetype detection", { clear = true })
