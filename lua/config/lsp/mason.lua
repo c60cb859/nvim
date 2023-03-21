@@ -23,17 +23,34 @@ end
 --{ "DEBUG", "INFO", "WARN", "ERROR", "OFF" }
 require("vim.lsp.log").set_level("OFF")
 
+local linters = {
+	"flake8",
+	"hadolint",
+	"salene",
+	"shellcheck",
+}
+
+local formatters = {
+	"beautysh",
+	"black",
+	"clang-format",
+	"stylua",
+}
+
+local lsp_servers = {
+	"bashls",
+	"clangd",
+	"cmake",
+	"dockerls",
+	"lemminx",
+	"lua_ls", -- requires unzip
+	"marksman",
+	"pyright", -- requires npm
+	"rust_analyzer",
+}
+
 malsp.setup({
-	ensure_installed = {
-		"lua_ls", -- requires unzip
-		"pyright", -- requires npm
-		"cmake",
-		"clangd",
-		"marksman",
-		"bashls",
-		"lemminx",
-		"rust_analyzer",
-	},
+	ensure_installed = lsp_servers,
 })
 
 local lsp_conf = require("lspconfig")
