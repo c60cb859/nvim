@@ -155,7 +155,8 @@ return packer.startup(function(use)
 		requires = {
 			{ "nvim-treesitter/playground", opt = false },
 			{ "nvim-treesitter/nvim-treesitter-context", opt = false },
-			{ "p00f/nvim-ts-rainbow", opt = false },
+			-- { "p00f/nvim-ts-rainbow", opt = false },
+			{ "HiPhish/nvim-ts-rainbow2", opt = false },
 			{ "folke/twilight.nvim", opt = false },
 			-- { "/home/theis/git/twilight.nvim", opt = false },
 			{ "numToStr/Comment.nvim", opt = false },

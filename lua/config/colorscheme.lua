@@ -15,7 +15,13 @@ onedark.setup({
 		LspReferenceRead = { bg = "$bg1", fg = "$cyan", fmt = "bold" },
 		LspReferenceWrite = { bg = "$bg1", fg = "$yellow", fmt = "bold" },
 		-- Rainbow parentheses
-		rainbowcol1 = { fg = "$fg" },
+		TSRainbowRed = { fg = "$red", fmt = "bold" },
+		TSRainbowYellow = { fg = "$yellow", fmt = "bold" },
+		TSRainbowBlue = { fg = "$blue", fmt = "bold" },
+		TSRainbowOrange = { fg = "$orange", fmt = "bold" },
+		TSRainbowGreen = { fg = "$green", fmt = "bold" },
+		TSRainbowViolet = { fg = "$purple", fmt = "bold" },
+		TSRainbowCyan = { fg = "$cyan", fmt = "bold" },
 		-- Tree Sitter color tweaks
 		["@keyword"] = { fg = "$red" },
 		["@keyword.function"] = { fg = "$red" },
