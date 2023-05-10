@@ -38,6 +38,10 @@ local options = {
 	updatetime = 300,
 	wrap = true,
 	writebackup = false,
+	linebreak = true,
+	breakindent = true,
+	showbreak = "",
+	breakat = " \t!@*+;:,./?",
 }
 
 for key, value in pairs(options) do
