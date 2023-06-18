@@ -1,9 +1,9 @@
 local listchars = {
-	eol = "",
+	eol = "󰌑",
 	tab = "⊦ ",
 	multispace = "␣",
 	lead = " ",
-	trail = "",
+	trail = "󰇷",
 }
 
 local options = {
