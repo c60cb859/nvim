@@ -129,9 +129,15 @@ return packer.startup(function(use)
 	use("c60cb859/bufMov.nvim")
 
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	local treesitter = { "nvim-treesitter/nvim-treesitter", opt = false }
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			ts_update()
+		end,
+	})
 
+	local treesitter = { "nvim-treesitter/nvim-treesitter", opt = false }
 	use({ "nvim-treesitter/playground", requires = treesitter })
 	use({ "nvim-treesitter/nvim-treesitter-context", requires = treesitter })
 	use({ "HiPhish/nvim-ts-rainbow2", requires = treesitter })
