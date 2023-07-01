@@ -83,9 +83,6 @@ return packer.startup(function(use)
 		},
 	})
 
-	-- Vim Wiki
-	use({ "vimwiki/vimwiki", branch = "dev" })
-
 	-- Markdown
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -94,27 +91,10 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- use({
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	run = "cd app && npm install",
-	-- 	setup = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = { "markdown" },
-	-- })
-
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use({ "williamboman/mason.nvim", run = ":MasonUpdate" })
 	use("williamboman/mason-lspconfig.nvim")
-	use("folke/trouble.nvim")
-
-	-- DAP
-	use("mfussenegger/nvim-dap")
-	use({
-		"rcarriga/nvim-dap-ui",
-		requires = { "mfussenegger/nvim-dap" },
-	})
 
 	-- Auto Completion
 	use("hrsh7th/nvim-cmp")
@@ -149,19 +129,14 @@ return packer.startup(function(use)
 	use("c60cb859/bufMov.nvim")
 
 	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-		requires = {
-			{ "nvim-treesitter/playground", opt = false },
-			{ "nvim-treesitter/nvim-treesitter-context", opt = false },
-			-- { "p00f/nvim-ts-rainbow", opt = false },
-			{ "HiPhish/nvim-ts-rainbow2", opt = false },
-			{ "folke/twilight.nvim", opt = false },
-			-- { "/home/theis/git/twilight.nvim", opt = false },
-			{ "numToStr/Comment.nvim", opt = false },
-		},
-	})
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	local treesitter = { "nvim-treesitter/nvim-treesitter", opt = false }
+
+	use({ "nvim-treesitter/playground", requires = treesitter })
+	use({ "nvim-treesitter/nvim-treesitter-context", requires = treesitter })
+	use({ "HiPhish/nvim-ts-rainbow2", requires = treesitter })
+	use({ "folke/twilight.nvim", requires = treesitter })
+	use({ "numToStr/Comment.nvim", requires = treesitter })
 
 	-- Formatter
 	use({
