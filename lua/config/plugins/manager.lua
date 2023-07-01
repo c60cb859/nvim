@@ -93,7 +93,13 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
-	use({ "williamboman/mason.nvim", run = ":MasonUpdate" })
+	use({
+		"williamboman/mason.nvim",
+		run = function()
+			local mason_update = require("mason-core.notify")
+			mason_update()
+		end,
+	})
 	use("williamboman/mason-lspconfig.nvim")
 
 	-- Auto Completion
