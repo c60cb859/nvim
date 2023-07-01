@@ -96,7 +96,7 @@ return packer.startup(function(use)
 	use({
 		"williamboman/mason.nvim",
 		run = function()
-			local mason_update = require("mason-core.notify")
+			local mason_update = require("mason.api.command").MasonUpdate()
 			mason_update()
 		end,
 	})
@@ -147,7 +147,6 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/playground", requires = treesitter })
 	use({ "nvim-treesitter/nvim-treesitter-context", requires = treesitter })
 	use({ "HiPhish/nvim-ts-rainbow2", requires = treesitter })
-	use({ "folke/twilight.nvim", requires = treesitter })
 	use({ "numToStr/Comment.nvim", requires = treesitter })
 
 	-- Formatter
