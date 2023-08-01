@@ -61,6 +61,8 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("navarasu/onedark.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "folke/tokyonight.nvim" })
 
 	-- Obsession
 	use("tpope/vim-obsession")
@@ -156,6 +158,8 @@ return packer.startup(function(use)
 			{ "nvim-lua/plenary.nvim", opt = false },
 		},
 	})
+	-- QMK
+	use({ "codethread/qmk.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
