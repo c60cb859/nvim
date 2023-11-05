@@ -11,6 +11,7 @@ local function lsp_keymaps(bufnr)
 	keymap("n", "<leader>O", "<cmd>lua vim.lsp.buf.outgoing_calls()<CR>", opts)
 	keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+	keymap("n", "<leader>fo", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 	--  keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap("n", "<leader>t", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 

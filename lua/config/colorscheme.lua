@@ -6,7 +6,6 @@ end
 
 onedark.setup({
 	style = "dark",
-	toggle_style_key = "<leader>c",
 	toggle_style_list = { "darker", "cool", "deep", "warm", "warmer", "light", "dark" },
 
 	highlights = {
