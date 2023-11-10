@@ -9,6 +9,7 @@ neogit.setup({
 	disable_hint = false,
 	disable_context_highlighting = false,
 	disable_commit_confirmation = false,
+	disable_line_numbers = false,
 	auto_refresh = true,
 	disable_builtin_notifications = false,
 	use_magit_keybindings = true,
@@ -20,8 +21,8 @@ neogit.setup({
 		kind = "split",
 	},
 	signs = {
-		section = { "", "" },
-		item = { "", "" },
+		section = { "", "" },
+		item = { "", "󰈔" },
 		hunk = { "", "" },
 	},
 	integrations = {

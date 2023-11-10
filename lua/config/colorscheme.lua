@@ -60,8 +60,8 @@ onedark.setup({
 		-- Indent blankline
 		IndentBlanklineChar = { fg = "$bg2" },
 
-		Folded = { fg = "$yellow", fmt = "bold" },
-		FoldColumn = { fg = "$yellow", bg = "$bg0" },
+		-- Folded = { fg = "$yellow" },
+		-- FoldColumn = { fg = "$yellow", bg = "$bg0" },
 	},
 })
 

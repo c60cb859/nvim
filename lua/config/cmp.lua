@@ -84,14 +84,17 @@ local format = function(entry, vim_item)
 end
 
 -- Sources
-local lsp = { name = "nvim_lsp", keyword_length = 4, max_item_count = 10 }
-local lua = { name = "nvim_lua", keyword_length = 4, max_item_count = 5 }
-local snip = { name = "luasnip", keyword_length = 4, max_item_count = 5 }
+local common_keyword_length = 1
+
+local lsp = { name = "nvim_lsp", keyword_length = common_keyword_length, max_item_count = 10 }
+local lua = { name = "nvim_lua", keyword_length = common_keyword_length, max_item_count = 5 }
+local snip = { name = "luasnip", keyword_length = common_keyword_length, max_item_count = 5 }
+local signature = { name = "nvim_lsp_signature_help", keyword_length = common_keyword_length, max_item_count = 5 }
 
 local buffer = {
 	name = "buffer",
-	keyword_length = 4,
-	max_item_count = 5,
+	keyword_length = common_keyword_length,
+	max_item_count = 10,
 	option = {
 		get_bufnrs = function()
 			return vim.api.nvim_list_bufs()
@@ -99,7 +102,7 @@ local buffer = {
 	},
 }
 
-local path = { name = "path", keyword_length = 4, max_item_count = 5 }
+local path = { name = "path", keyword_length = common_keyword_length, max_item_count = 10 }
 
 -- Setup
 cmp.setup({
@@ -116,6 +119,7 @@ cmp.setup({
 	},
 	sources = {
 		lsp,
+		signature,
 		lua,
 		snip,
 		buffer,
@@ -131,7 +135,7 @@ cmp.setup({
 		},
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
 })
 

@@ -1,5 +1,5 @@
 require("config.options")
---require("config.window_options")
+require("config.window_options")
 require("config.keymaps")
 require("config.lang")
 require("config.plugins")

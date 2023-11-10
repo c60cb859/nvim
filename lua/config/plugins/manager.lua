@@ -123,6 +123,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lsp-document-symbol")
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
 
 	-- Lua Completion for neovim API
 	use("hrsh7th/cmp-nvim-lua")
@@ -165,7 +166,8 @@ return packer.startup(function(use)
 
 	-- Formatter
 	use({
-		"jose-elias-alvarez/null-ls.nvim",
+		-- "jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		requires = {
 			{ "nvim-lua/plenary.nvim", opt = false },
 		},

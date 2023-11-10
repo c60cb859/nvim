@@ -39,3 +39,13 @@ keymap("n", "<leader>fg", ':Telescope grep_string search=""<CR>', opts)
 keymap("n", "<leader>fb", tsBuiltin.buffers, opts)
 keymap("n", "<leader>fh", tsBuiltin.help_tags, opts)
 keymap("n", "z=", tsBuiltin.spell_suggest, opts)
+
+vim.keymap.set("n", "<leader>/", function()
+	-- You can pass additional configuration to telescope to change theme, layout, etc.
+	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
+		-- winblend = 100,
+		-- layout_strategy = "vertical",
+		layout_config = { height = 0.2 },
+		previewer = false,
+	}))
+end, { desc = "[/] Fuzzily search in current buffer" })
