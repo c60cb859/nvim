@@ -16,8 +16,8 @@ local on_attach = function(bufnr)
 	keymap("n", "<leader>gS", gs.stage_buffer, opts)
 	keymap("n", "<leader>gR", gs.reset_buffer, opts)
 	keymap("n", "<leader>gp", gs.preview_hunk, opts)
-	keymap("n", "G>", gs.next_hunk, opts)
-	keymap("n", "G<", gs.prev_hunk, opts)
+	keymap("n", "g.", gs.next_hunk, opts)
+	keymap("n", "g,", gs.prev_hunk, opts)
 end
 
 gitsigns.setup({

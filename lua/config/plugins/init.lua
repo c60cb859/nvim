@@ -1,4 +1,5 @@
-require("config.plugins.manager")
+-- require("config.plugins.manager")
+require("config.plugins.lazy")
 
 require("config.plugins.telescope")
 require("config.plugins.gitSigns")

@@ -174,6 +174,7 @@ return packer.startup(function(use)
 	})
 
 	use("sotte/presenting.vim")
+	use({ "vladdoster/remember.nvim", config = [[ require('remember') ]] })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

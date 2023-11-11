@@ -3,7 +3,7 @@ local options = {
 	-- cursorcolumn = true,
 	foldmethod = "expr",
 	foldexpr = "nvim_treesitter#foldexpr()",
-	foldlevel = 99,
+	foldenable = false,
 }
 
 for key, value in pairs(options) do

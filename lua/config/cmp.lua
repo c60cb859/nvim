@@ -38,7 +38,7 @@ local mapping = {
 		i = cmp.mapping.abort(),
 		c = cmp.mapping.close(),
 	}),
-	["<cr>"] = cmp.mapping.confirm({ select = false }),
+	["<tab>"] = cmp.mapping.confirm({ select = true }),
 }
 
 local kind_icons = {
@@ -127,7 +127,7 @@ cmp.setup({
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
-		select = false,
+		select = true,
 	},
 	window = {
 		documentation = {
@@ -135,7 +135,7 @@ cmp.setup({
 		},
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 	},
 })
 
