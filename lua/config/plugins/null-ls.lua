@@ -30,15 +30,17 @@ null_ls.setup({
 -- Formatters
 null_ls.register(require("config.formatter.stylua"))
 null_ls.register(require("config.formatter.clang_format"))
+null_ls.register(require("config.formatter.cmake_format"))
 null_ls.register(require("config.formatter.black"))
-null_ls.register(require("config.formatter.rustfmt"))
+-- null_ls.register(require("config.formatter.rustfmt"))
 null_ls.register(require("config.formatter.prettier"))
-null_ls.register(require("config.formatter.beautysh"))
+-- null_ls.register(require("config.formatter.beautysh"))
 null_ls.register(require("config.formatter.java"))
 null_ls.register(require("config.formatter.sql-formatter"))
 
 -- diagnostics
 null_ls.register(require("config.linter.selene"))
-null_ls.register(require("config.linter.flake8"))
+-- null_ls.register(require("config.linter.flake8"))
+null_ls.register(require("config.linter.cmakelint"))
 -- null_ls.register(require("config.linter.sqlfluff"))
 -- null_ls.register(require("config.linter.erb"))

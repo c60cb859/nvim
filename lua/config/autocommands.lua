@@ -18,6 +18,15 @@ autocmd("Filetype", {
 	group = quickfix,
 })
 
+local autoformat = augroup("auto format", { clear = true })
+autocmd("BufWritePre", {
+	pattern = "*.rs",
+	callback = function()
+		vim.lsp.buf.format()
+	end,
+	group = autoformat,
+})
+
 --local test = function()
 --    local win = vim.api.nvim_get_current_win() -- save where we are now
 --    local bufnr = vim.api.nvim_get_current_buf()
