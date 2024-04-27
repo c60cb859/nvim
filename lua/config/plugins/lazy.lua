@@ -120,4 +120,6 @@ require("lazy").setup({
 
 	"sotte/presenting.vim",
 	{ "vladdoster/remember.nvim", config = [[ require('remember') ]] },
+
+	"imsnif/kdl.vim",
 })
