@@ -17,7 +17,7 @@ require("lazy").setup({
 
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.4",
+		tag = "0.1.8",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim", lazy = false },
 			{ "kyazdani42/nvim-web-devicons", lazy = false },
@@ -104,7 +104,7 @@ require("lazy").setup({
 		dependencies = {
 			{ "nvim-treesitter/playground", lazy = false },
 			{ "nvim-treesitter/nvim-treesitter-context", lazy = false },
-			{ "HiPhish/nvim-ts-rainbow2", lazy = false },
+			{ "HiPhish/rainbow-delimiters.nvim", lazy = false },
 			{ "folke/twilight.nvim", lazy = false },
 			{ "numToStr/Comment.nvim", lazy = false },
 		},
