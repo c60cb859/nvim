@@ -17,7 +17,8 @@ require("lazy").setup({
 
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		-- tag = "0.1.8",
+		branch = "0.1.x",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim", lazy = false },
 			{ "kyazdani42/nvim-web-devicons", lazy = false },
@@ -103,7 +104,8 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		dependencies = {
 			{ "nvim-treesitter/playground", lazy = false },
-			{ "nvim-treesitter/nvim-treesitter-context", lazy = false },
+			-- { "nvim-treesitter/nvim-treesitter-context", lazy = false},
+			{ "yanskun/nvim-treesitter-context", lazy = false, branch = "fix/minus-row-selected" },
 			{ "HiPhish/rainbow-delimiters.nvim", lazy = false },
 			{ "folke/twilight.nvim", lazy = false },
 			{ "numToStr/Comment.nvim", lazy = false },
