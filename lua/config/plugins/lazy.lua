@@ -104,8 +104,8 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		dependencies = {
 			{ "nvim-treesitter/playground", lazy = false },
-			-- { "nvim-treesitter/nvim-treesitter-context", lazy = false},
-			{ "yanskun/nvim-treesitter-context", lazy = false, branch = "fix/minus-row-selected" },
+			{ "nvim-treesitter/nvim-treesitter-context", lazy = false },
+			-- { "yanskun/nvim-treesitter-context", lazy = false, branch = "fix/minus-row-selected" },
 			{ "HiPhish/rainbow-delimiters.nvim", lazy = false },
 			{ "folke/twilight.nvim", lazy = false },
 			{ "numToStr/Comment.nvim", lazy = false },
