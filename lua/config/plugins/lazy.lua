@@ -29,6 +29,10 @@ require("lazy").setup({
 
 	-- Colorschemes
 	"navarasu/onedark.nvim",
+	-- {
+	-- 	"olimorris/onedarkpro.nvim",
+	-- 	priority = 1000,
+	-- },
 
 	-- Obsession
 	"tpope/vim-obsession",
@@ -124,4 +128,7 @@ require("lazy").setup({
 	{ "vladdoster/remember.nvim", config = [[ require('remember') ]] },
 
 	"imsnif/kdl.vim",
+
+	-- Ansible
+	"mfussenegger/nvim-ansible",
 })

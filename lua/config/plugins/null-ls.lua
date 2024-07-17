@@ -40,6 +40,7 @@ null_ls.register(require("config.formatter.sql-formatter"))
 
 -- diagnostics
 null_ls.register(require("config.linter.selene"))
+null_ls.register(require("config.linter.ansible"))
 -- null_ls.register(require("config.linter.flake8"))
 null_ls.register(require("config.linter.cmakelint"))
 null_ls.register(require("config.linter.checkmake"))
