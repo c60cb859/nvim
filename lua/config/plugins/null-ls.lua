@@ -37,8 +37,10 @@ null_ls.register(require("config.formatter.prettier"))
 -- null_ls.register(require("config.formatter.beautysh"))
 null_ls.register(require("config.formatter.java"))
 null_ls.register(require("config.formatter.sql-formatter"))
+null_ls.register(require("config.formatter.buf"))
 
 -- diagnostics
+null_ls.register(require("config.linter.buf"))
 null_ls.register(require("config.linter.selene"))
 null_ls.register(require("config.linter.ansible"))
 -- null_ls.register(require("config.linter.flake8"))
