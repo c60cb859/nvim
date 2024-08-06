@@ -4,8 +4,24 @@ if not snip_status_ok then
 	return
 end
 
+local types = require("luasnip.util.types")
+
+local ext_opts = {
+	[types.choiceNode] = {
+		active = {
+			virt_text = { { "󰯲", "TSRainbowOrange" } },
+		},
+	},
+	[types.insertNode] = {
+		active = {
+			virt_text = { { "󰰄", "TSRainbowGreen" } },
+		},
+	},
+}
+
 ls.setup({
 	enable_autosnippets = false,
+	ext_opts = ext_opts,
 })
 
 require("luasnip/loaders/from_vscode").lazy_load()
