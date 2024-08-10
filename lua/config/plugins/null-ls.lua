@@ -41,6 +41,7 @@ null_ls.register(require("config.formatter.buf"))
 
 -- diagnostics
 null_ls.register(require("config.linter.buf"))
+null_ls.register(require("config.linter.djlint"))
 null_ls.register(require("config.linter.selene"))
 null_ls.register(require("config.linter.ansible"))
 -- null_ls.register(require("config.linter.flake8"))
