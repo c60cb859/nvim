@@ -40,6 +40,11 @@ keymap("n", "C<", ":cNext<cr>", opts)
 keymap("n", "<c-d>", "<c-d>zz", opts)
 keymap("n", "<c-u>", "<c-u>zz", opts)
 
+-- Tabs
+keymap("n", "<c-t>", ":tabnew<cr>", opts)
+keymap("n", "<c-l>", ":tabnext<cr>", opts)
+keymap("n", "<c-h>", ":tabprevious<cr>", opts)
+
 -- BufMov
 keymap("n", "<leader>j", ":MoveBufferDown<cr>", opts)
 keymap("n", "<leader>k", ":MoveBufferUp<cr>", opts)
