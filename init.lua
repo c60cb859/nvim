@@ -1,10 +1,18 @@
 require("config.options")
-require("config.window_options")
-require("config.keymaps")
-require("config.lang")
-require("config.plugins")
-require("config.autocommands")
-require("config.commands")
-require("config.colorscheme")
-require("config.cmp")
-require("config.lsp")
+require("config.lazy")
+
+vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+vim.keymap.set("n", "<space>x", ":.lua<CR>")
+vim.keymap.set("v", "<space>x", ":lua<CR>")
+
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when ynaking (copying) text',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

@@ -1,6 +1,0 @@
-require("config.lang.asm")
-require("config.lang.cpp")
-require("config.lang.lua")
-require("config.lang.markdown")
-require("config.lang.python")
-require("config.lang.rust")

@@ -1,51 +1,63 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-	vim.notify("Telescope not found!")
-	return
+local builtin = require("telescope.builtin")
+
+local search_config_dir = function()
+  builtin.find_files { cwd = vim.fn.stdpath("config") }
 end
 
-telescope.setup({
-	defaults = {
-		sorting_strategy = "ascending",
-		winblend = 20,
-		prompt_prefix = " ",
-		selection_prefix = "",
-	},
-	extensions = {
-		fzf = {
-			fuzzy = true,
-			override_generic_sorter = true,
-			override_file_sorter = true,
-			case_mode = "smart_case",
-		},
-		["ui-select"] = {
-			require("telescope.themes").get_dropdown(),
-		},
-	},
-})
+local fuzzy_in_file_serach = function()
+  builtin.current_buffer_fuzzy_find(require("telescope.themes").get_ivy(
+    {
+      layout_config = { height = 0.2 },
+      previewer = false,
+    }
+  ))
+end
 
--- Load fzf extensions
-telescope.load_extension("fzf")
-telescope.load_extension("ui-select")
+local config = function()
+  local telescope = require("telescope")
 
--- Telescope keymap
-local opts = { noremap = true, silent = true }
-local keymap = vim.keymap.set
-local tsBuiltin = require("telescope.builtin")
+  telescope.setup({
+    defaults = {
+      sorting_strategy = "ascending",
+      winblend = 20,
+      prompt_prefix = " ",
+      selection_prefix = "",
+    },
+    extensions = {
+      fzf = {
+        fuzzy = true,
+        override_generic_sorter = true,
+        override_file_sorter = true,
+        case_mode = "smart_case",
+      },
+    },
+  })
 
-keymap("n", "<leader>ff", tsBuiltin.find_files, opts)
---keymap("n", "<leader>fg", tsBuiltin.live_grep, opts)
-keymap("n", "<leader>fg", ':Telescope grep_string search=""<CR>', opts)
-keymap("n", "<leader>fb", tsBuiltin.buffers, opts)
-keymap("n", "<leader>fh", tsBuiltin.help_tags, opts)
-keymap("n", "z=", tsBuiltin.spell_suggest, opts)
+  -- Load fzf extensions
+  telescope.load_extension("fzf")
 
-vim.keymap.set("n", "<leader>/", function()
-	-- You can pass additional configuration to telescope to change theme, layout, etc.
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
-		-- winblend = 100,
-		-- layout_strategy = "vertical",
-		layout_config = { height = 0.2 },
-		previewer = false,
-	}))
-end, { desc = "[/] Fuzzily search in current buffer" })
+  -- Telescope keymap
+  local keymap = vim.keymap.set
+
+  keymap("n", "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
+  -- keymap("n", "<leader>fg", ':Telescope grep_string search=""<CR>', { desc = 'Telescope live grep' })
+  keymap("n", "<leader>fb", builtin.buffers, { desc = 'Telescope buffers' })
+  keymap("n", "<leader>fh", builtin.help_tags, { desc = 'Telescope help tags' })
+  keymap("n", "z=", builtin.spell_suggest, { desc = 'Telescope spell suggestions' })
+
+  keymap("n", "en", search_config_dir, { desc = "Search files in neovim config dir" })
+  keymap("n", "<leader>/", fuzzy_in_file_serach, { desc = "[/] Fuzzily search in current buffer" })
+
+  require("config.telescope.multigrep").setup()
+end
+
+
+return {
+  'nvim-telescope/telescope.nvim',
+  branch = 'master',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+  },
+  config = config,
+}
