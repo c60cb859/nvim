@@ -1,11 +1,7 @@
 require("config.options")
 require("config.keymaps")
+require("config.terminal")
 require("config.lazy")
-
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua<CR>")
-
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

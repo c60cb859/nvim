@@ -1,12 +1,9 @@
-local opts = { noremap = true, silent = true }
-local termOpts = { silent = true }
-
 -- Short keymap function
 local keymap = vim.keymap.set
 
 -- Remap space as leader key
-keymap("", "<space>", "<nop>", opts)
-keymap("", "<bs>", "<nop>", opts)
+keymap("", "<space>", "<nop>", { desc = "Set space to no operation" })
+keymap("", "<bs>", "<nop>", { desc = "Set backspace to no operation" })
 vim.g.mapleader = " "
 vim.g.maplocalleader = vim.api.nvim_replace_termcodes("<bs>", true, false, true)
 
@@ -19,69 +16,63 @@ vim.g.maplocalleader = vim.api.nvim_replace_termcodes("<bs>", true, false, true)
 --	term_mode			= "t",
 --	command_mode		= "c"
 
--- All modes --
 -- Visual-line navigation, nice when lines a wrapped
-keymap("", "k", "gk", opts)
-keymap("", "j", "gj", opts)
+keymap("", "k", "gk", { desc = "Move up one visual line" })
+keymap("", "j", "gj", { desc = "Move down one visual line" })
 
--- Normal mode --
+-- Lua hacks
+keymap("n", "<space><space>x", "<cmd>source %<CR>", { desc = "Source the current file" })
+keymap("n", "<space>x", ":.lua<CR>", { desc = "Execute the current line" })
+keymap("v", "<space>x", ":lua<CR>", { desc = "Execute the selection" })
 
 -- Quit and save shotcuts
-keymap("n", "<m-q>", ":q<cr>", opts)
--- keymap("n", "<c-s>", ":w<cr>", opts)
+keymap("n", "<A-q>", ":q<cr>", { desc = "Quit" })
+-- keymap("n", "<c-s>", ":w<cr>", { desc = "" })
 
 -- QuickFix movements
-keymap("n", "C>", ":cnext<cr>", opts)
-keymap("n", "C<", ":cNext<cr>", opts)
+-- keymap("n", "C>", ":cnext<cr>", { desc = "Jump to the next quickfix item" })
+-- keymap("n", "C<", ":cNext<cr>", { desc = "Jump to the previous quickfix item" })
 
 -- Center after half page jump
-keymap("n", "<c-d>", "<c-d>zz", opts)
-keymap("n", "<c-u>", "<c-u>zz", opts)
+keymap("n", "<C-d>", "<c-d>zz", { desc = "Center after half page down jumps" })
+keymap("n", "<C-u>", "<c-u>zz", { desc = "Center after half page up jumps" })
 
 -- Window
-keymap("n", "<M-j>", "<c-w>j", opts)
-keymap("n", "<M-k>", "<c-w>k", opts)
-keymap("n", "<M-l>", "<c-w>l", opts)
-keymap("n", "<M-h>", "<c-w>h", opts)
+keymap("n", "<A-j>", "<c-w>j", { desc = "Move focus to the window below" })
+keymap("n", "<A-k>", "<c-w>k", { desc = "Move focus to the window above" })
+keymap("n", "<A-l>", "<c-w>l", { desc = "Move focus to the window on the right" })
+keymap("n", "<A-h>", "<c-w>h", { desc = "Move focus to the window on the left" })
 
 -- Window resize
-keymap("n", "<C-M-j>", ":resize -5<cr>", opts)
-keymap("n", "<C-M-k>", ":resize +5<cr>", opts)
-keymap("n", "<C-M-l>", ":vertical resize +5<cr>", opts)
-keymap("n", "<C-M-h>", ":vertical resize -5<cr>", opts)
+keymap("n", "<C-A-j>", ":resize -5<cr>", { desc = "Make window lovew" })
+keymap("n", "<C-A-k>", ":resize +5<cr>", { desc = "Make window higher" })
+keymap("n", "<C-A-l>", ":vertical resize +5<cr>", { desc = "Make window wider" })
+keymap("n", "<C-A-h>", ":vertical resize -5<cr>", { desc = "Make window narrower" })
 
 -- Tabs
-keymap("n", "<M-n>", ":tabnew<cr>", opts)
-keymap("n", "<M-.>", ":tabnext<cr>", opts)
-keymap("n", "<M-,>", ":tabprevious<cr>", opts)
+keymap("n", "<A-n>", ":tabnew<cr>", { desc = "Open new tab" })
+keymap("n", "<A-.>", ":tabnext<cr>", { desc = "Jump to next tab" })
+keymap("n", "<A-,>", ":tabprevious<cr>", { desc = "Jump to privious tab" })
 
--- Terminal split
-keymap("n", "<M-t>", ":vsplit | terminal<cr> i", opts)
-keymap("n", "<M-d>", ":split | terminal<cr> i", opts)
 
 -- -- BufMov
--- keymap("n", "<leader>j", ":MoveBufferDown<cr>", opts)
--- keymap("n", "<leader>k", ":MoveBufferUp<cr>", opts)
--- keymap("n", "<leader>l", ":MoveBufferRight<cr>", opts)
--- keymap("n", "<leader>h", ":MoveBufferLeft<cr>", opts)
+-- keymap("n", "<leader>j", ":MoveBufferDown<cr>", { desc = "" })
+-- keymap("n", "<leader>k", ":MoveBufferUp<cr>", { desc = "" })
+-- keymap("n", "<leader>l", ":MoveBufferRight<cr>", { desc = "" })
+-- keymap("n", "<leader>h", ":MoveBufferLeft<cr>", { desc = "" })
 
 -- Remove bad whitespaces
--- keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>", opts)
+-- keymap("n", "<leader>rs", ":let _s=@/ <Bar> :%s/\\s\\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>", { desc = "" })
 
--- Insert mode --
-keymap("i", "<c-c>", "<esc>", opts)
+keymap("i", "<C-c>", "<esc>", { desc = "Exit from insert mode" })
 
--- Visual mode --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", { desc = "Stay in indent mode" })
+keymap("v", ">", ">gv", { desc = "Stay in indent mode" })
 
 -- Keep copy buffer on paste
-keymap("v", "<leader>p", '"_dP', opts)
+keymap("v", "<leader>p", '"_dP', { desc = "Keep copy buffer on paste" })
 
 -- Move text up and down
-keymap("v", "J", ":move '>+1<cr>gv-gv", opts)
-keymap("v", "K", ":move '<-2<cr>gv-gv", opts)
-
--- Terminal mode --
-keymap("t", "<esc>", "<c-\\><c-n>", termOpts)
+keymap("v", "J", ":move '>+1<cr>gv-gv", { desc = "Move selected text up" })
+keymap("v", "K", ":move '<-2<cr>gv-gv", { desc = "Move selected text down" })
