@@ -24,6 +24,7 @@ local options = {
   number = true,
   numberwidth = 1,
   relativenumber = true,
+  sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions",
   shiftwidth = 2,
   showtabline = 0,
   signcolumn = "number",
