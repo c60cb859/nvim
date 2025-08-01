@@ -4,6 +4,7 @@ local keymap = vim.keymap.set
 -- Remap space as leader key
 keymap("", "<space>", "<nop>", { desc = "Set space to no operation" })
 keymap("", "<bs>", "<nop>", { desc = "Set backspace to no operation" })
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = vim.api.nvim_replace_termcodes("<bs>", true, false, true)
 
