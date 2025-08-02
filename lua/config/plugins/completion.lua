@@ -1,39 +1,39 @@
 return {
   {
-    'saghen/blink.cmp',
+    "saghen/blink.cmp",
     enabled = true,
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = { "rafamadriz/friendly-snippets" },
 
-    version = '1.*',
+    version = "1.*", --   test
 
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
+    --- @module 'blink.cmp'
+    --- @type blink.cmp.Config
     opts = {
       keymap = {
-        preset = 'default',
-        ['<C-p>'] = { 'show', 'select_prev', 'fallback_to_mappings' },
-        ['<C-n>'] = { 'show', 'select_next', 'fallback_to_mappings' },
+        preset = "default",
+        ["<C-p>"] = { "show", "select_prev", "fallback_to_mappings" },
+        ["<C-n>"] = { "show", "select_next", "fallback_to_mappings" },
       },
 
       appearance = {
-        nerd_font_variant = 'mono'
+        nerd_font_variant = "mono",
       },
       signature = { enabled = true },
 
       completion = {
-        documentation = { auto_show = false },
-        trigger = { show_on_keyword = false },
+        documentation = { auto_show = true },
+        trigger = { show_on_keyword = true },
       },
 
       sources = {
-        default = { 'lsp', 'buffer', 'path', 'snippets' },
+        default = { "lsp", "buffer", "path", "snippets" },
         providers = {
-          lsp = { fallbacks = {} }
-        }
+          lsp = { fallbacks = {} },
+        },
       },
 
-      fuzzy = { implementation = "prefer_rust_with_warning" }
+      fuzzy = { implementation = "prefer_rust_with_warning" },
     },
-    opts_extend = { "sources.default" }
-  }
+    opts_extend = { "sources.default" },
+  },
 }

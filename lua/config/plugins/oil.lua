@@ -3,14 +3,13 @@ local config = function()
   require("oil").setup()
 end
 
-
 return {
   {
     "stevearc/oil.nvim",
-    ---@module 'oil'
-    ---@type oil.SetupOpts
+    --- @module 'oil'
+    --- @type oil.SetupOpts
     opts = {},
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    config = config
+    config = config,
   },
 }

@@ -19,6 +19,6 @@ end
 return {
   {
     "b0o/incline.nvim",
-    config = config
-  }
+    config = config,
+  },
 }

@@ -37,6 +37,6 @@ return {
           border = "none",
         },
       })
-    end
-  }
+    end,
+  },
 }

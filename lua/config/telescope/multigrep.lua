@@ -9,7 +9,7 @@ local live_multigrep = function(opts)
   opts = opts or {}
   opts.cwd = opts.cwd or vim.uv.cwd()
 
-  local finder = finders.new_async_job {
+  local finder = finders.new_async_job({
     command_generator = function(prompt)
       if not prompt or prompt == "" then
         return nil
@@ -27,21 +27,27 @@ local live_multigrep = function(opts)
         table.insert(args, pieces[2])
       end
 
-      return vim.iter({
-        args, { "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
-      }):flatten():totable()
+      return vim
+        .iter({
+          args,
+          { "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
+        })
+        :flatten()
+        :totable()
     end,
     entry_maker = make_entry.gen_from_vimgrep(opts),
     cwd = opts.cwd,
-  }
+  })
 
-  picker.new(opts, {
-    debounce = 100,
-    prompt_title = "Multi Grep",
-    finder = finder,
-    previewer = conf.grep_previewer(opts),
-    sorter = require("telescope.sorters").empty(),
-  }):find()
+  picker
+    .new(opts, {
+      debounce = 100,
+      prompt_title = "Multi Grep",
+      finder = finder,
+      previewer = conf.grep_previewer(opts),
+      sorter = require("telescope.sorters").empty(),
+    })
+    :find()
 end
 
 M.setup = function()

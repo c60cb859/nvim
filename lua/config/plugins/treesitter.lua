@@ -4,8 +4,20 @@ return {
     build = ":TSUpdate",
     branch = "main",
     config = function()
-      require("nvim-treesitter").install { "c", "cpp", "lua", "rust", "python", "vim", "vimdoc", "query", "markdown", "markdown_inline" }
-      require 'nvim-treesitter'.setup {
+      require("nvim-treesitter").install({
+        "c",
+        "cpp",
+        "lua",
+        "rust",
+        "python",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline",
+        "json",
+      })
+      require("nvim-treesitter").setup({
         auto_install = false,
         highlight = {
           enable = true,
@@ -20,7 +32,7 @@ return {
 
           additional_vim_regex_highlighting = false,
         },
-      }
+      })
     end,
-  }
+  },
 }

@@ -1,16 +1,14 @@
 local builtin = require("telescope.builtin")
 
 local search_config_dir = function()
-  builtin.find_files { cwd = vim.fn.stdpath("config") }
+  builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end
 
 local fuzzy_in_file_serach = function()
-  builtin.current_buffer_fuzzy_find(require("telescope.themes").get_ivy(
-    {
-      layout_config = { height = 0.2 },
-      previewer = false,
-    }
-  ))
+  builtin.current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
+    layout_config = { height = 0.2 },
+    previewer = false,
+  }))
 end
 
 local config = function()
@@ -39,11 +37,11 @@ local config = function()
   -- Telescope keymap
   local keymap = vim.keymap.set
 
-  keymap("n", "<leader>ff", builtin.find_files, { desc = 'Telescope find files' })
-  -- keymap("n", "<leader>fg", ':Telescope grep_string search=""<CR>', { desc = 'Telescope live grep' })
-  keymap("n", "<leader>fb", builtin.buffers, { desc = 'Telescope buffers' })
-  keymap("n", "<leader>fh", builtin.help_tags, { desc = 'Telescope help tags' })
-  keymap("n", "z=", builtin.spell_suggest, { desc = 'Telescope spell suggestions' })
+  keymap("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+  -- keymap("n", "<leader>fg", ':Telesope grep_string search=""<CR>', { desc = 'Telescope live grep' })
+  keymap("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+  keymap("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+  keymap("n", "z=", builtin.spell_suggest, { desc = "Telescope spell suggestions" })
 
   keymap("n", "en", search_config_dir, { desc = "Search files in neovim config dir" })
   keymap("n", "<leader>/", fuzzy_in_file_serach, { desc = "[/] Fuzzily search in current buffer" })
@@ -51,13 +49,12 @@ local config = function()
   require("config.telescope.multigrep").setup()
 end
 
-
 return {
-  'nvim-telescope/telescope.nvim',
-  branch = 'master',
+  "nvim-telescope/telescope.nvim",
+  branch = "master",
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+    "nvim-lua/plenary.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   config = config,
 }

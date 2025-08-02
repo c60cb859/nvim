@@ -22,7 +22,7 @@ local config = function()
           inactive = "lualine_b_normal",
         },
         symbols = {
-          modified = ' 󰏫', -- Text to show when the file is modified.
+          modified = " 󰏫", -- Text to show when the file is modified.
         },
       },
     },
@@ -39,8 +39,8 @@ end
 
 return {
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = config
-  }
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = config,
+  },
 }
