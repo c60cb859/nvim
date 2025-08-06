@@ -15,15 +15,13 @@ local config = function()
     lualine_c = {
       {
         "tabs",
-        -- max_length = vim.o.columns / 3,
-        mode = 0,
+        max_length = vim.o.columns / 3,
+        mode = 1,
         tabs_color = {
           active = "lualine_a_insert",
           inactive = "lualine_b_normal",
         },
-        symbols = {
-          modified = " 󰏫", -- Text to show when the file is modified.
-        },
+        show_modified_status = false,
       },
     },
     lualine_x = { "encoding", "fileformat", "filetype" },
@@ -35,6 +33,10 @@ local config = function()
     options = options,
     sections = line,
   })
+
+  vim.keymap.set("n", "<A-r>", ":LualineRenameTab ", { desc = "Rename tab" })
+  vim.keymap.set("i", "<A-r>", ":LualineRenameTab ", { desc = "Rename tab" })
+  vim.keymap.set("t", "<A-r>", "<C-\\><C-n>:LualineRenameTab ", { desc = "Rename tab" })
 end
 
 return {
