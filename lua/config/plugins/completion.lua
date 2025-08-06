@@ -38,6 +38,7 @@ return {
         trigger = { show_on_keyword = true },
       },
 
+      snippets = { preset = "luasnip" },
       sources = {
         default = { "lsp", "buffer", "path", "snippets" },
         providers = {
