@@ -1,4 +1,4 @@
---snip_env = {
+-- snip_env = {
 --    s = require("luasnip.nodes.snippet").S,
 --    sn = require("luasnip.nodes.snippet").SN,
 --    t = require("luasnip.nodes.textNode").T,
@@ -25,53 +25,53 @@
 
 -- stylua: ignore start
 local short = {
-    c(1, {
-		t("feat("),
-		t("fix("),
-		t("docs("),
-		t("style("),
-		t("refactor("),
-		t("perf("),
-		t("test("),
-		t("chore("),
-	}), i(2, "scope"), t("): "), i(3, "subject"),
+  c(1, {
+    t("feat("),
+    t("fix("),
+    t("docs("),
+    t("style("),
+    t("refactor("),
+    t("perf("),
+    t("test("),
+    t("chore("),
+  }), i(2, "scope"), t("): "), i(3, "subject"),
 }
 
 local long = {
-    c(1, {
-		t("feat("),
-		t("fix("),
-		t("docs("),
-		t("style("),
-		t("refactor("),
-		t("perf("),
-		t("test("),
-		t("chore("),
-	}), i(2, "scope"), t("): "), i(3, "subject"),
-	t({"", "", ""}),
-	i(4, "Message"),
-	t({"", "", ""}),
-		c(5, {
-			t("Jira: "),
-			t("Git: "),
-			t("")
-		}),
-	i(6, "References"),
+  c(1, {
+    t("feat("),
+    t("fix("),
+    t("docs("),
+    t("style("),
+    t("refactor("),
+    t("perf("),
+    t("test("),
+    t("chore("),
+  }), i(2, "scope"), t("): "), i(3, "subject"),
+  t({ "", "", "" }),
+  i(4, "Message"),
+  t({ "", "", "" }),
+  c(5, {
+    t("Jira: "),
+    t("Git: "),
+    t(""),
+  }),
+  i(6, "References"),
 }
 -- stylua: ignore end
 
 local M = {
-	s({
-		trig = "commit short",
-		name = "Short commit template",
-		dscr = "Template for commit messages",
-	}, short),
+  s({
+    trig = "commit short",
+    name = "Short commit template",
+    dscr = "Template for commit messages",
+  }, short),
 
-	s({
-		trig = "commit long",
-		name = "Long commit template",
-		dscr = "Template for commit messages",
-	}, long),
+  s({
+    trig = "commit long",
+    name = "Long commit template",
+    dscr = "Template for commit messages",
+  }, long),
 }
 
 return M

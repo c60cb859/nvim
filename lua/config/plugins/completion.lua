@@ -13,8 +13,8 @@ return {
         preset = "none",
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
         ["<C-y>"] = { "show", "select_and_accept" },
-        ["<C-p>"] = { "show", "select_prev", "fallback_to_mappings" },
 
+        ["<C-p>"] = { "show", "select_prev", "fallback_to_mappings" },
         ["<C-n>"] = { "show", "select_next", "fallback_to_mappings" },
 
         ["<C-e>"] = { "hide" },
@@ -26,6 +26,19 @@ return {
         ["<c-j>"] = { "snippet_backward", "fallback" },
 
         ["<C-S-k>"] = { "show_signature", "hide_signature", "fallback" },
+      },
+
+      cmdline = {
+        keymap = {
+          preset = "none",
+          ["<C-y>"] = { "show", "select_and_accept" },
+
+          ["<C-p>"] = { "show_and_insert", "select_prev", "fallback_to_mappings" },
+          ["<C-n>"] = { "show_and_insert", "select_next", "fallback_to_mappings" },
+
+          ["<C-e>"] = { "hide" },
+        },
+        completion = { menu = { preselect = true, auto_show = true } },
       },
 
       appearance = {

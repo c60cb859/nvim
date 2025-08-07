@@ -24,7 +24,7 @@ vim.g.maplocalleader = vim.api.nvim_replace_termcodes("<bs>", true, false, true)
 -- Setup lazy.nvim
 require("lazy").setup({
   install = {
-    colorscheme = { "murphy" },
+    colorscheme = { "tokyonight" },
   },
   change_detection = {
     -- automatically check for config file changes and reload the ui

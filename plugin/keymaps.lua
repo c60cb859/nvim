@@ -1,6 +1,7 @@
 -- Remap space as leader key
 vim.keymap.set("", "<space>", "<nop>", { desc = "Set space to no operation" })
 vim.keymap.set("", "<bs>", "<nop>", { desc = "Set backspace to no operation" })
+vim.keymap.set("c", "<tab>", "<nop>", { desc = "Set command_mode tab to no operation" })
 
 -- Modes
 -- 	all					= "",
@@ -14,11 +15,6 @@ vim.keymap.set("", "<bs>", "<nop>", { desc = "Set backspace to no operation" })
 -- Visual-line navigation, nice when lines a wrapped
 vim.keymap.set("", "k", "gk", { desc = "Move up one visual line" })
 vim.keymap.set("", "j", "gj", { desc = "Move down one visual line" })
-
--- Lua hacks
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>", { desc = "Source the current file" })
-vim.keymap.set("n", "<space>x", ":.lua<CR>", { desc = "Execute the current line" })
-vim.keymap.set("v", "<space>x", ":lua<CR>", { desc = "Execute the selection" })
 
 -- vim.keymap.set("n", "<c-s>", ":w<cr>", { desc = "" })
 

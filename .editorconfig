@@ -98,7 +98,7 @@ align_if_branch = false
 # option none / always / contain_curly/
 align_array_table = false
 align_continuous_similar_call_args = false
-align_continuous_inline_comment = true
+align_continuous_inline_comment = false
 # option none / always / only_call_stmt
 align_chain_expr = none
 
