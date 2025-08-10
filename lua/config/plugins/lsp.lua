@@ -21,6 +21,7 @@ local config = function()
     "lua_ls",
     "jsonls",
     "rust_analyzer",
+    "marksman",
   })
 
   vim.api.nvim_create_autocmd("LspAttach", {
