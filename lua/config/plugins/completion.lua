@@ -23,7 +23,7 @@ return {
         ["<C-f>"] = { "scroll_documentation_down", "fallback" },
 
         ["<C-k>"] = { "snippet_forward", "fallback" },
-        ["<c-j>"] = { "snippet_backward", "fallback" },
+        ["<C-j>"] = { "snippet_backward", "fallback" },
 
         ["<C-S-k>"] = { "show_signature", "hide_signature", "fallback" },
       },

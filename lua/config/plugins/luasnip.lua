@@ -25,6 +25,8 @@ return {
       ls.setup({
         enable_autosnippets = false,
         ext_opts = ext_opts,
+        region_check_events = "InsertEnter",
+        delete_check_events = "InsertLeave",
       })
 
       require("luasnip/loaders/from_vscode").lazy_load()
@@ -32,6 +34,18 @@ return {
 
       local opts = { noremap = true, silent = true }
       local keymap = vim.keymap.set
+
+      -- keymap({ "i", "s" }, "<c-k>", function()
+      --   if ls.expand_or_jumpable() then
+      --     ls.expand_or_jump()
+      --   end
+      -- end, opts)
+      --
+      -- keymap({ "i", "s" }, "<c-j>", function()
+      --   if ls.jumpable(-1) then
+      --     ls.jump(-1)
+      --   end
+      -- end, opts)
 
       keymap({ "i", "s" }, "<c-l>", function()
         if ls.choice_active() then
