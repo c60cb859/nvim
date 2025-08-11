@@ -4,7 +4,7 @@ if not rainbow_ok then
 	return
 end
 
-rainbow.setup({
+require("rainbow-delimiters.setup").setup({
 	highlight = {
 		"TSRainbowBlue",
 		"TSRainbowViolet",

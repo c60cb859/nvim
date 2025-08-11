@@ -21,7 +21,7 @@ if not status_malsp_ok then
 end
 
 --{ "DEBUG", "INFO", "WARN", "ERROR", "OFF" }
-require("vim.lsp.log").set_level("OFF")
+require("vim.lsp.log").set_level("WARN")
 
 local linters = {
 	"flake8",

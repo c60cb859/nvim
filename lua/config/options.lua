@@ -35,6 +35,7 @@ local options = {
 	splitright = true,
 	swapfile = false,
 	tabstop = 2,
+	termguicolors = true,
 	undofile = true,
 	updatetime = 300,
 	wrap = true,

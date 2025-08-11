@@ -27,8 +27,21 @@ require("lazy").setup({
 		},
 	},
 
+	-- CSV view
+	{
+	  'hat0uma/csvview.nvim',
+	  config = function()
+		require('csvview').setup()
+	  end
+	},
+
 	-- Colorschemes
-	"navarasu/onedark.nvim",
+	{
+		"navarasu/onedark.nvim",
+		config = function ()
+			require'colorizer'.setup()
+		end
+	},
 	-- {
 	-- 	"olimorris/onedarkpro.nvim",
 	-- 	priority = 1000,
@@ -44,6 +57,15 @@ require("lazy").setup({
 	},
 	-- Incline
 	"b0o/incline.nvim",
+
+	{
+		"salkin-mada/openscad.nvim",
+		config = function()
+			vim.g.openscad_load_snippets = true
+			require("openscad")
+		end,
+		dependencies = { "L3MON4D3/LuaSnip", "junegunn/fzf.vim" },
+	},
 
 	-- git plugin
 	"lewis6991/gitsigns.nvim",
@@ -62,10 +84,13 @@ require("lazy").setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+	{
+		"norcalli/nvim-colorizer.lua",
+	},
 
 	-- LSP
 	"neovim/nvim-lspconfig",
-	{ "williamboman/mason.nvim", build = ":MasonUpdate" },
+	{ "mason-org/mason.nvim", build = ":MasonUpdate" },
 	"williamboman/mason-lspconfig.nvim",
 	"folke/trouble.nvim",
 
@@ -131,4 +156,14 @@ require("lazy").setup({
 
 	-- Ansible
 	"mfussenegger/nvim-ansible",
+	-- Oli.nvim
+	{
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {},
+		-- Optional dependencies
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+	},
 })
