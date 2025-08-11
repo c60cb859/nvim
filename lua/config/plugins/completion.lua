@@ -38,16 +38,28 @@ return {
 
           ["<C-e>"] = { "hide" },
         },
-        completion = { menu = { preselect = true, auto_show = true } },
+        completion = {
+          menu = {
+            preselect = true,
+            auto_show = true,
+          },
+        },
       },
 
       appearance = {
         nerd_font_variant = "mono",
       },
-      signature = { enabled = true },
+      signature = {
+        enabled = true,
+        window = { border = "rounded" },
+      },
 
       completion = {
-        documentation = { auto_show = true },
+        menu = { border = "rounded" },
+        documentation = {
+          auto_show = true,
+          window = { border = "rounded" },
+        },
         trigger = { show_on_keyword = true },
       },
 

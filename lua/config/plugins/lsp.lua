@@ -29,6 +29,20 @@ local config = function()
     callback = function(args)
       local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
+      vim.keymap.set("n", "K", function()
+        vim.lsp.buf.hover({ border = "rounded" })
+      end, {
+        buffer = args.buf,
+        desc = "LSP hover with rounded border",
+      })
+
+      vim.keymap.set("i", "<C-s>", function()
+        vim.lsp.buf.signature_help({ border = "rounded" })
+      end, {
+        buffer = args.buf,
+        desc = "LSP signature help with rounded border",
+      })
+
       -- Auto-format ("lint") on save.
       -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
       if
